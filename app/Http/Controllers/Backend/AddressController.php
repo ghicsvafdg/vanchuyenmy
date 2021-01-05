@@ -26,7 +26,7 @@ class AddressController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function index(Request $request)
     {
@@ -86,7 +86,7 @@ class AddressController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function create()
     {
@@ -115,7 +115,7 @@ class AddressController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
 
     //store order when users haven't had address yet
@@ -205,7 +205,6 @@ class AddressController extends Controller
                                                         'footerPost','provinces','categories'),
                                                         ['error'=>'Mã giảm giá không tồn tại']);
                     }
-                break;
                 }
             case 'paymoney':
                 {
@@ -303,8 +302,6 @@ class AddressController extends Controller
                     Mail::to($user)->send(new MailNotify($getOrder,$getOrderDetail));
 
                     return redirect()->route('don-hang.index')->with('success','Đặt hàng thành công!');
-                    
-                break;
                 }  
         }
            
@@ -377,7 +374,6 @@ class AddressController extends Controller
                         return view('frontend.payment',compact('categories','code','add','tgs','method','sum','cartlist','cart','user','footerPost'),
                                                         ['error'=>'Mã giảm giá không tồn tại']);
                     }
-                break;
                 }
             case 'paymoney':
                 {
@@ -449,7 +445,7 @@ class AddressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id): \Illuminate\Http\Response
     {
         //
     }
