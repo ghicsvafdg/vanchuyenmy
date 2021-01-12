@@ -1,6 +1,6 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>Vận chuyển hàng Mỹ | Quản lý</title>
+<title>Trao ba mẹ niềm tin | Quản lý</title>
 <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' charset="utf-8"/>
 <link rel="icon" href="{{asset('images/logo_without_text.png')}}" type="image/x-icon"/>
 <!-- Fonts and icons -->
