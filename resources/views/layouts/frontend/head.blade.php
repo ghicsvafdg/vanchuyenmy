@@ -1,7 +1,7 @@
 <meta name="google-site-verification" content="ZT_vVYVntgZqhbl4KRKDtddmO3w17nWo7niQkUpin9o" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="_token" content="{{csrf_token()}}"/>
-<title>Vận chuyển hàng Mỹ</title>
+<title>Trao ba mẹ niềm tin</title>
 <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 <meta charset="utf-8">
 <link rel="icon" href="{{asset('images/logo_without_text.png')}}" type="image/x-icon"/>
