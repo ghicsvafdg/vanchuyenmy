@@ -127,7 +127,7 @@
                                 </div>
                                 {{-- end small image --}}
                                 @endif
-                                
+
                                 {{-- show 5 image --}}
                                 <script>
                                     var slideIndex = 1;
@@ -167,7 +167,7 @@
                                         <div class="pr-3">
                                             <h3><b>{{$product->name}}</b></h3>
                                         </div>
-                                        <div class="pb-0" id="cost" >
+                                        <div class="pb-0" id="cost">
                                             <div class="row">
                                                 @if (isset($product->promotion))
                                                 <p2>{{number_format($product->price*1000, 0, ',', '.' )}} đ</p2>
@@ -296,7 +296,7 @@
                 </div>
             </div>
         </div>
-                            
+
         <a name="comment"></a>
         <div class="col-md-12 px-0">
             <div class="card">
@@ -542,7 +542,7 @@
             </div>
         </div>
         <!-- END-TAGS -->
-                        
+
         {{-- relate products --}}
         <div class="col px-0">
             <div class="card">
@@ -550,45 +550,45 @@
                     <h2 style="border-left: 4px solid orange; padding-left: 10px;">Sản phẩm liên quan</h2>
                 </div>
                 <div class="owl-carousel owl-theme product-watched_carousel">
-                    @foreach ($relateProduct as $product)
+                    @foreach ($relateProduct as $relateProduct)
                     <div class="item" id="shadow-card">
                         <div class="card">  
-                            <a href="{{route('san-pham.show',$product->slug)}}"> 
-                                <img class="img-fluid" style="height: 210px;" src="{{asset('images/'.json_decode($product->filename)[0])}}" alt="Chania">
+                            <a href="{{route('san-pham.show',$relateProduct->slug)}}">
+                                <img class="img-fluid" style="height: 210px;" src="{{asset('images/'.json_decode($relateProduct->filename)[0])}}" alt="Chania">
                             </a>
                             <div class="px-2">
                                 <div class="pt-3 title-card" style="height: 55px;">
-                                    <a class="card-title" href="{{route('san-pham.show',$product->slug)}}">
-                                        <h4 class="ellipsis">{{$product->name}}</h4>
+                                    <a class="card-title" href="{{route('san-pham.show',$relateProduct->slug)}}">
+                                        <h4 class="ellipsis">{{$relateProduct->name}}</h4>
                                     </a>
                                 </div>
                                 <div class="text-left common-cost">
                                     <div class="col">
                                         <div class="row">
-                                            @if (!empty($product->promotion))               
+                                            @if (!empty($relateProduct->promotion))
                                             <p class="main-cost">
-                                                <b>{{number_format($product->promotion*1000, 0, ',', '.' )}}đ</b>
+                                                <b>{{number_format($relateProduct->promotion*1000, 0, ',', '.' )}}đ</b>
                                             </p>                
                                             <p class="pt-1 abondon-text-cost">
-                                                {{number_format($product->price*1000, 0, ',', '.' )}}đ
+                                                {{number_format($relateProduct->price*1000, 0, ',', '.' )}}đ
                                             </p>
                                             @else
                                             <p class="main-cost">
-                                                <b>{{number_format($product->price*1000, 0, ',', '.' )}}đ</b>
+                                                <b>{{number_format($relateProduct->price*1000, 0, ',', '.' )}}đ</b>
                                             </p>
                                             @endif
                                         </div>
                                     </div>
                                 </div>
                                 <div class="rating-star pb-2">
-                                    <span class="fa fa-star @if(floatval($product->star) > 1) checked @endif" id="star"></span>
-                                    <span class="fa fa-star @if(floatval($product->star) > 1.5) checked @endif" id="star"></span>
-                                    <span class="fa fa-star @if(floatval($product->star) > 2.5) checked @endif" id="star"></span>
-                                    <span class="fa fa-star @if(floatval($product->star) > 3.5) checked @endif" id="star"></span>
-                                    <span class="fa fa-star @if(floatval($product->star) > 4.5) checked @endif" id="star"></span>
+                                    <span class="fa fa-star @if(floatval($relateProduct->star) > 1) checked @endif" id="star"></span>
+                                    <span class="fa fa-star @if(floatval($relateProduct->star) > 1.5) checked @endif" id="star"></span>
+                                    <span class="fa fa-star @if(floatval($relateProduct->star) > 2.5) checked @endif" id="star"></span>
+                                    <span class="fa fa-star @if(floatval($relateProduct->star) > 3.5) checked @endif" id="star"></span>
+                                    <span class="fa fa-star @if(floatval($relateProduct->star) > 4.5) checked @endif" id="star"></span>
                                 </div>
                                 <div class="row pb-3 icon-view-details">
-                                    <a href="{{route('san-pham.show',$product->slug)}}">
+                                    <a href="{{route('san-pham.show',$relateProduct->slug)}}">
                                         <div class="col" style="color: blue;">Xem chi tiết</div>
                                     </a>
                                     @if (Auth::check())
@@ -596,9 +596,9 @@
                                         @csrf
                                         <input type="text" value="{{Auth::user()->id}}" name="user_id" hidden>
                                         <input type="text" value="1" name="quantity" hidden>
-                                        <input type="text" value="{{$product->id}}" name="product_id" hidden>
-                                        <input type="text" value="{{explode(',',$product->size)[0]}}" name="size" hidden>
-                                        <input type="text" value="{{explode(',',$product->color)[0]}}" name="color" hidden>
+                                        <input type="text" value="{{$relateProduct->id}}" name="product_id" hidden>
+                                        <input type="text" value="{{explode(',',$relateProduct->size)[0]}}" name="size" hidden>
+                                        <input type="text" value="{{explode(',',$relateProduct->color)[0]}}" name="color" hidden>
                                         <button type="submit" class="btn-btn-cart">
                                             <i class="fas fa-cart-plus" style="color: #f09819;"></i>
                                         </button>
@@ -619,7 +619,7 @@
             </div>
         </div>
         {{-- end relate products --}}
-        
+
         {{-- viewed products --}}
         @if (Auth::check())
         <div class="col px-0">
