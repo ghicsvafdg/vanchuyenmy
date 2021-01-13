@@ -86,7 +86,7 @@ return [
 
     'username' => 'hotro.vanchuyenmy@gmail.com',
 
-    'password' => '123456aA@',
+    'password' => 'hotro123456aA@',
 
     /*
     |--------------------------------------------------------------------------
