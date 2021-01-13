@@ -26,7 +26,7 @@ class AddressController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function index(Request $request)
     {
@@ -86,7 +86,7 @@ class AddressController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function create()
     {
@@ -115,7 +115,7 @@ class AddressController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
 
     //store order when users haven't had address yet
@@ -162,50 +162,38 @@ class AddressController extends Controller
                     //get payment method
                     $method = $request->get('method');
 
-                    if(!empty($code))
-                    {
+                    if (!empty($code)) {
                         $checkCode = Order::where([['user_id',Auth::user()->id],
                                                 ['voucher','like',"$code->code%"]])->first();
-
                         //validate voucher
-                        if($checkCode)
-                        {
+                        if ($checkCode) {
                             return view('frontend.payment',compact('code','method','province','district','ward','name',
                                                             'note','tags','tgs','phone','sum','cartlist','cart','user',
                                                             'footerPost','provinces','categories'),
                                     ['error'=>'Bạn đã sử dụng mã giảm giá']);
-
-                        }elseif($code->use_time == 0)
-                        {
+                        } elseif ($code->use_time == 0) {
                             return view('frontend.payment',compact('code','method','province','district','ward','name',
                                                             'note','tags','tgs','phone','sum','cartlist','cart','user',
                                                             'footerPost','provinces','categories'),
                                     ['error'=>'Mã giảm giá đã hết lượt dùng']);
-
-                        }elseif(date('Y-m-d',strtotime(str_replace('/','-',$code->end_time))) < date("Y-m-d"))
-                        {
+                        } elseif (date('Y-m-d',strtotime(str_replace('/','-',$code->end_time))) < date("Y-m-d")) {
                             return view('frontend.payment',compact('code','method','province','district','ward','name',
                                                             'note','tags','tgs','phone','sum','cartlist','cart','user',
                                                             'footerPost','provinces','categories'),
                                     ['error'=>'Mã giảm giá đã hết hạn sử dụng']);
-                            
-                        }elseif($code->limited > $request->get('price'))
-                        {
+                        } elseif ($code->limited > $request->get('price')) {
                             return view('frontend.payment',compact('code','method','province','district','ward','name',
                                                             'note','tags','tgs','phone','sum','cartlist','cart','user',
                                                             'footerPost','provinces','categories'),
                                     ['error'=>'Giá trị đơn hàng chưa đủ để sử dụng mã giảm giá này']);
                         }
-
                         return view('frontend.payment',compact('categories','code','method','province','district','ward','name','note','tags','tgs','phone','sum','cartlist','cart','user','footerPost','provinces'));
-                    }else
-                    {
+                    } else {
                         return view('frontend.payment',compact('code','method','province','district','ward','name',
                                                         'note','tags','tgs','phone','sum','cartlist','cart','user',
                                                         'footerPost','provinces','categories'),
                                                         ['error'=>'Mã giảm giá không tồn tại']);
                     }
-                break;
                 }
             case 'paymoney':
                 {
@@ -215,22 +203,18 @@ class AddressController extends Controller
                     ]);
                     
                     //create address
-                    if($request->get('provincess') != null && $request->get('districtt') != null && $request->get('wardd') != null)
-                    {
+                    if ($request->get('provincess') != null && $request->get('districtt') != null && $request->get('wardd') != null) {
                         $province = Province::where('id',(int)$request->get('provincess'))->first()->name;
                         $district = District::where('id',(int)$request->get('districtt'))->first()->name;
                         $ward = Ward::where('id',(int)$request->wardd)->first()->name;
                         $add = $ward.", ".$district.", ".$province;
                     }
-                    else if($request->get('province') != null && $request->get('district') != null && $request->get('ward') != null) 
-                    {
+                    else if($request->get('province') != null && $request->get('district') != null && $request->get('ward') != null) {
                         $province = Province::where('id',(int)$request->get('province'))->first()->name;
                         $district = District::where('id',(int)$request->get('district'))->first()->name;
                         $ward = Ward::where('id',(int)$request->ward)->first()->name;
                         $add = $ward.", ".$district.", ".$province;
-                    }
-                    else
-                    {
+                    } else {
                         return back()->with('error','Vui lòng điền toàn bộ ô trống');
                     }
                     
@@ -303,8 +287,6 @@ class AddressController extends Controller
                     Mail::to($user)->send(new MailNotify($getOrder,$getOrderDetail));
 
                     return redirect()->route('don-hang.index')->with('success','Đặt hàng thành công!');
-                    
-                break;
                 }  
         }
            
@@ -377,7 +359,6 @@ class AddressController extends Controller
                         return view('frontend.payment',compact('categories','code','add','tgs','method','sum','cartlist','cart','user','footerPost'),
                                                         ['error'=>'Mã giảm giá không tồn tại']);
                     }
-                break;
                 }
             case 'paymoney':
                 {
@@ -449,7 +430,7 @@ class AddressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id): \Illuminate\Http\Response
     {
         //
     }
