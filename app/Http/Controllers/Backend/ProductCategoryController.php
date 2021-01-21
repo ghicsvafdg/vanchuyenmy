@@ -50,17 +50,9 @@ class ProductCategoryController extends Controller
             return redirect()->route('index');
         }
         $parent = $request->get('parent_id');
-        $category = ProductCategory::where('id', '=', $parent)->first();
-        $order = $request->get('order');
-        $getOrder = ProductCategory::where('order', '=', $order)->first();
-        if (!($getOrder === null)) {
-        }
-        if (!($category === null) && $category->parent_id != 0) {
-            return back()->with('error', 'Danh mục sản phẩm tồn tại tối đa 2 cấp!');
-        }
 
         $request->validate([
-            'title' => 'required|unique:product_categories',
+            'title' => 'required|unique:product_categories|regex:/^[A-Za-z0-9 ]+$/',
         ]);
         $title = $request->get('title');
 
