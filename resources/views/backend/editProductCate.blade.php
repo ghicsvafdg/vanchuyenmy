@@ -35,16 +35,15 @@
             <br>
             <label>Thuộc về danh mục: </label>
             <select class="form-control" name="id">
-                @if ($category->parent_id !=0)
+                <option selected value="0">Danh mục lớn</option>
+                @if ($category->parent_id != 0)
                 <option selected value="{{$cate->id}}">{{$cate->title}}</option>
-                @else
-                <option selected value="0"></option>
                 @endif
                 @foreach ($categories as $item)
-                <option value="{{$item->id}}">{{$item->title}}</option>
-                @if(count($item->childs))
-                @include('backend.selectChildProduct',['childs' => $item->childs])
-                @endif
+                    @if($item->parent_id == 0)
+                            <option value="{{$item->id}}">{{$item->title}}</option>
+                            @include('backend.selectChildProduct',['childs' => $item->childs])
+                    @endif
                 @endforeach
             </select>
             <span class="text-danger">{{ $errors->first('parent_id') }}</span>

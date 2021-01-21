@@ -15,41 +15,10 @@ use App\Models\Tag;
 class ProductCategoryController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function show($slug)
     {
@@ -77,40 +46,6 @@ class ProductCategoryController extends Controller
             return view('frontend.productCategory', compact('banner','tags','tgs','categories','product','category','cartlist','cart','footerPost','newest'));
         }
         return view ('frontend.productCategory',compact('banner','tags','tgs','categories','product','category','footerPost', 'newest'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 
     public function filter(Request $request, $id){
@@ -145,51 +80,48 @@ class ProductCategoryController extends Controller
             }
         }
 
-        if(!empty($price)&&!empty($range)){
-            if($price==1){
-                if($range==1){
+        if (!empty($price)&&!empty($range)) {
+            if ($price == 1) {
+                if ($range == 1) {
                     $pro = Product::where('category_id', $id)->whereBetween('price',[0,200.00])->orderBy('price', 'ASC');
-                }elseif($range==2){
+                } elseif ($range == 2) {
                     $pro = Product::where('category_id', $id)->whereBetween('price',[200.00,500.00])->orderBy('price', 'ASC');
-                }elseif($range==3){
+                } elseif ($range == 3) {
                     $pro = Product::where('category_id', $id)->whereBetween('price',[500.00,1000.00])->orderBy('price', 'ASC');
-                }elseif($range==4){
+                } elseif ($range == 4) {
                     $pro = Product::where([['category_id', $id],['price','>=',1000.00]])->orderBy('price', 'ASC');
                 }
-            }elseif($price==2){
-                if($range==1){
+            } elseif ($price == 2) {
+                if ($range == 1) {
                     $pro = Product::where('category_id', $id)->whereBetween('price',[0,200.00])->orderBy('price', 'DESC');
-                }elseif($range==2){
+                } elseif ($range == 2) {
                     $pro = Product::where('category_id', $id)->whereBetween('price',[200.00,500.00])->orderBy('price', 'DESC');
-                }elseif($range==3){
+                } elseif ($range == 3) {
                     $pro = Product::where('category_id', $id)->whereBetween('price',[500.00,1000.00])->orderBy('price', 'DESC');
-                }elseif($range==4){
+                } elseif ($range == 4) {
                     $pro = Product::where('category_id', $id)->where('price','>=',1000.00)->orderBy('price', 'DESC');
                 }
             }
         }
-       
+
         $product = $pro->paginate(12);
-        
+
         $footerPost = FooterPost::where('status',1)->get();
 
         //hotTags in index
         $tags = Tag::all()->sortByDesc('views')->take(6);
         //hot tags in footer
         $tgs = Tag::all()->sortByDesc('views')->take(12);
-        
+
         //get all active categogies
         $categories = ProductCategory::where([['parent_id', '=', 0],['status','=',1],])
                                         ->OrderBy('order','desc')->get();
-            
-        if(Auth::check()){
-            
+
+        if (Auth::check()) {
             $cartlist = Cart::where('user_id',Auth::user()->id)->count();
             $cart = Cart::where('user_id',Auth::user()->id)->get();
             return view('frontend.productCategory', compact('tags','tgs','categories','banner','product','category','cartlist','cart','footerPost', 'newest'));
         }
         return view ('frontend.productCategory',compact('tags','tgs','categories','banner','product','category','footerPost',  'newest'));
     }
-
-    
 }

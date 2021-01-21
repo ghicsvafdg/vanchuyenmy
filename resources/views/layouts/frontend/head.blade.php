@@ -1,7 +1,18 @@
 <meta name="google-site-verification" content="ZT_vVYVntgZqhbl4KRKDtddmO3w17nWo7niQkUpin9o" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="_token" content="{{csrf_token()}}"/>
-<title>Trao ba mẹ niềm tin</title>
+<title>
+    @if(request()->is('danh-muc/*'))
+        {{$category->title}}
+    @elseif(request()->is('post/*'))
+        {{$post->title}}
+    @elseif(request()->is('san-pham/*'))
+        {{$product->name}}
+    @else
+        Trao ba mẹ niềm tin
+    @endif
+    | mamabi
+</title>
 <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 <meta charset="utf-8">
 <link rel="icon" href="{{asset('images/logo_without_text.png')}}" type="image/x-icon"/>
