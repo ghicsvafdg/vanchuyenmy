@@ -149,6 +149,7 @@ return [
         ],
         'title' => [
             'unique' => 'Tên đã tồn tại',
+            'regex' => 'Tên không được chứa kí tự đặc biệt'
         ],
         'category' => [
             'required' => 'Bài viết phải thuộc một hạng mục nhất định',

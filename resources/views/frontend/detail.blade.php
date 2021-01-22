@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('content')
-<div class="container">
+    <div class="container">
     <div class="page-header">
         {{-- bread crumb --}}
         <div class="product">
@@ -628,54 +628,54 @@
                     <h2 style="border-left: 4px solid orange; padding-left: 10px;">SẢN PHẨM ĐÃ XEM</h2>
                 </div>
                 <div class="owl-carousel owl-theme">
-                    @foreach ($viewedList as $product)
+                    @foreach ($viewedList as $productViewed)
                     <div class="item" id="shadow-card">
                         <div class="card">  
-                            <a href="{{route('san-pham.show',$product->viewedProduct->slug)}}">
-                                <img class="img-fluid" style="height: 210px;" src="{{asset('images/'.json_decode($product->viewedProduct->filename)[0])}}" alt="Chania">
+                            <a href="{{route('san-pham.show',$productViewed->viewedProduct->slug)}}">
+                                <img class="img-fluid" style="height: 210px;" src="{{asset('images/'.json_decode($productViewed->viewedProduct->filename)[0])}}" alt="Chania">
                             </a>
                             <div class="px-2">
                                 <div class="pt-3 title-card" style="height: 55px;">
-                                    <a class="card-title" href="{{route('san-pham.show',$product->viewedProduct->slug)}}">
-                                        <h4 class="ellipsis">{{$product->viewedProduct->name}}</h4>
+                                    <a class="card-title" href="{{route('san-pham.show',$productViewed->viewedProduct->slug)}}">
+                                        <h4 class="ellipsis">{{$productViewed->viewedProduct->name}}</h4>
                                     </a>
                                 </div>
                                 <div class="text-left common-cost">
                                     <div class="col">
                                         <div class="row">
-                                            @if (!empty($product->viewedProduct->promotion))               
+                                            @if (!empty($productViewed->viewedProduct->promotion))
                                             <p class="main-cost">
-                                                <b>{{number_format($product->viewedProduct->promotion*1000, 0, ',', '.' )}}đ</b>
+                                                <b>{{number_format($productViewed->viewedProduct->promotion*1000, 0, ',', '.' )}}đ</b>
                                             </p>                
                                             <p class="pt-1 abondon-text-cost">
-                                                {{number_format($product->viewedProduct->price*1000, 0, ',', '.' )}}đ
+                                                {{number_format($productViewed->viewedProduct->price*1000, 0, ',', '.' )}}đ
                                             </p>
                                             @else
                                             <p class="main-cost">
-                                                <b>{{number_format($product->viewedProduct->price*1000, 0, ',', '.' )}}đ</b>
+                                                <b>{{number_format($productViewed->viewedProduct->price*1000, 0, ',', '.' )}}đ</b>
                                             </p>
                                             @endif
                                         </div>
                                     </div>
                                 </div>
                                 <div class="rating-star pb-2">
-                                    <span class="fa fa-star @if(floatval($product->viewedProduct->star) > 1) checked @endif" id="star"></span>
-                                    <span class="fa fa-star @if(floatval($product->viewedProduct->star) > 1.5) checked @endif" id="star"></span>
-                                    <span class="fa fa-star @if(floatval($product->viewedProduct->star) > 2.5) checked @endif" id="star"></span>
-                                    <span class="fa fa-star @if(floatval($product->viewedProduct->star) > 3.5) checked @endif" id="star"></span>
-                                    <span class="fa fa-star @if(floatval($product->viewedProduct->star) > 4.5) checked @endif" id="star"></span>
+                                    <span class="fa fa-star @if(floatval($productViewed->viewedProduct->star) > 1) checked @endif" id="star"></span>
+                                    <span class="fa fa-star @if(floatval($productViewed->viewedProduct->star) > 1.5) checked @endif" id="star"></span>
+                                    <span class="fa fa-star @if(floatval($productViewed->viewedProduct->star) > 2.5) checked @endif" id="star"></span>
+                                    <span class="fa fa-star @if(floatval($productViewed->viewedProduct->star) > 3.5) checked @endif" id="star"></span>
+                                    <span class="fa fa-star @if(floatval($productViewed->viewedProduct->star) > 4.5) checked @endif" id="star"></span>
                                 </div>
                                 <div class="row pb-3 icon-view-details">
-                                    <a href="{{route('san-pham.show',$product->viewedProduct->slug)}}"> <div class="col" style="color: blue;">Xem chi tiết</div></a>
+                                    <a href="{{route('san-pham.show',$productViewed->viewedProduct->slug)}}"> <div class="col" style="color: blue;">Xem chi tiết</div></a>
                                     
                                     @if (Auth::check())
                                     <form action="{{route('cart.store')}}" method="post">
                                         @csrf
                                         <input type="text" value="{{Auth::user()->id}}" name="user_id" hidden>
                                         <input type="text" value="1" name="quantity" hidden>
-                                        <input type="text" value="{{$product->products_id}}" name="product_id" hidden>
-                                        <input type="text" value="{{explode(',',$product->size)[0]}}" name="size" hidden>
-                                        <input type="text" value="{{explode(',',$product->color)[0]}}" name="color" hidden>
+                                        <input type="text" value="{{$productViewed->products_id}}" name="product_id" hidden>
+                                        <input type="text" value="{{explode(',',$productViewed->size)[0]}}" name="size" hidden>
+                                        <input type="text" value="{{explode(',',$productViewed->color)[0]}}" name="color" hidden>
                                         <button type="submit" class="btn-btn-cart">
                                             <i class="fas fa-cart-plus" style="color: #f09819;"></i>
                                         </button>
