@@ -76,14 +76,14 @@
                         <form action="{{route('filter-product-cate', $category->id)}}" method="GET">
                             @csrf
                             <li class="nav-item">
-                                <select name="price" class="form-control input-fixed" id="range-price" style="margin-top: 5px; width: 200px;"" >
+                                <select name="price" class="form-control input-fixed" id="range-price" style="margin-top: 5px; width: 200px;">
                                     <option value="" selected >Giá</option>
                                     <option value="1" >Giá: Thấp đến cao</option>
                                     <option value="2">Giá: Cao đến thấp</option>
                                 </select>
                             </li>
                             <li class="nav-item">
-                                <select name="range" class="form-control input-fixed" id="range-price" style="margin-top: 5px; width: 200px;"" >
+                                <select name="range" class="form-control input-fixed" id="range-price" style="margin-top: 5px; width: 200px;">
                                     <option value="" selected>Khoảng giá</option>
                                     <option value="1">0-200.000đ</option>
                                     <option value="2">200.000-500.000đ</option>

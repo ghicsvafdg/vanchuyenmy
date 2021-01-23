@@ -11,69 +11,21 @@
         <input type="hidden" name="search" value="{{$search}}">
         
         <div class="col">
-            @if($price==1)
             <select name="price" class="form-control input-fixed" id="notify_placement_align" style="margin-top: 5px;" >
-                <option value=""  disabled>Giá</option>
-                <option value="1" selected>Giá: Thấp đến cao</option>
-                <option value="2">Giá: Cao đến thấp</option>
+                <option value="" @if($price == null) selected @endif disabled>Giá</option>
+                <option value="1" @if($price == 1) selected @endif>Giá: Thấp đến cao</option>
+                <option value="2" @if($price == 2) selected @endif>Giá: Cao đến thấp</option>
             </select>
-            @elseif($price==2)
-            <select name="price" class="form-control input-fixed" id="notify_placement_align" style="margin-top: 5px;" >
-                <option value=""  disabled>Giá</option>
-                <option value="1" >Giá: Thấp đến cao</option>
-                <option value="2" selected>Giá: Cao đến thấp</option>
-            </select>
-            @elseif($price==null)
-            <select name="price" class="form-control input-fixed" id="notify_placement_align" style="margin-top: 5px;" >
-                <option value="" selected disabled>Giá</option>
-                <option value="1" >Giá: Thấp đến cao</option>
-                <option value="2" >Giá: Cao đến thấp</option>
-            </select>
-            @endif
         </div>
 
         <div class="col">
-            @if($range==1)
             <select name="range" class="form-control input-fixed" id="notify_placement_align" style="margin-top: 5px;" >
-                <option value=""  disabled>Khoảng giá</option>
-                <option value="1" selected >0-200.000đ</option>
-                <option value="2">200.000-500.000đ</option>
-                <option value="3">500.000-1.000.000đ</option>
-                <option value="4">>1.000.000đ</option>
+                <option value="" @if($price == null) selected @endif disabled>Khoảng giá</option>
+                <option value="1" @if($price == 1) selected @endif >0-200.000đ</option>
+                <option value="2" @if($price == 2) selected @endif>200.000-500.000đ</option>
+                <option value="3" @if($price == 3) selected @endif>500.000-1.000.000đ</option>
+                <option value="4" @if($price == 4) selected @endif>>1.000.000đ</option>
             </select>
-            @elseif($range==2)
-            <select name="range" class="form-control input-fixed" id="notify_placement_align" style="margin-top: 5px;" >
-                <option value=""  disabled>Khoảng giá</option>
-                <option value="1"  >0-200.000đ</option>
-                <option value="2"selected>200.000-500.000đ</option>
-                <option value="3">500.000-1.000.000đ</option>
-                <option value="4">>1.000.000đ</option>
-            </select>
-            @elseif($range==3)
-            <select name="range" class="form-control input-fixed" id="notify_placement_align" style="margin-top: 5px;" >
-                <option value=""  disabled>Khoảng giá</option>
-                <option value="1"  >0-200.000đ</option>
-                <option value="2"selected>200.000-500.000đ</option>
-                <option value="3">500.000-1.000.000đ</option>
-                <option value="4">>1.000.000đ</option>
-            </select>
-            @elseif($range==4)
-            <select name="range" class="form-control input-fixed" id="notify_placement_align" style="margin-top: 5px;" >
-                <option value=""  disabled>Khoảng giá</option>
-                <option value="1"  >0-200.000đ</option>
-                <option value="2">200.000-500.000đ</option>
-                <option value="3">500.000-1.000.000đ</option>
-                <option value="4" selected>>1.000.000đ</option>
-            </select>
-            @elseif($range==null)
-            <select name="range" class="form-control input-fixed" id="notify_placement_align" style="margin-top: 5px;" >
-                <option value="" selected disabled>Khoảng giá</option>
-                <option value="1"  >0-200.000đ</option>
-                <option value="2">200.000-500.000đ</option>
-                <option value="3">500.000-1.000.000đ</option>
-                <option value="4">>1.000.000đ</option>
-            </select>
-            @endif
         </div>
         <div class="col text-center" style="margin-top:7px">
             <button type="submit" class="btn btn-primary btn-sm center-block">Lọc
@@ -102,16 +54,16 @@
                                     <div class="text-left common-cost">
                                         <div class="col">
                                             <div class="row">
-                                                @if (!empty($pro->price))               
+                                                @if (!empty($pro->promotion))
                                                 <p class="main-cost">
-                                                    <b>{{number_format( $pro->price, 0, ',', ' ' )}}.000đ</b>
+                                                    <b>{{number_format( $pro->promotion, 0, ',', ' ' )}}.000đ</b>
                                                 </p>                
                                                 <p class="pt-1 abondon-text-cost">
-                                                    {{number_format( $pro->promotion, 0, ',', ' ' )}}.000đ
+                                                    {{number_format( $pro->price, 0, ',', ' ' )}}.000đ
                                                 </p>
                                                 @else
                                                 <p class="main-cost">
-                                                    <b>{{number_format( $pro->promotion, 0, ',', ' ' )}}.000đ</b>
+                                                    <b>{{number_format( $pro->price, 0, ',', ' ' )}}.000đ</b>
                                                 </p>
                                                 @endif
                                             </div>
@@ -127,7 +79,9 @@
                                         <span class="fa fa-star" id="star"></span>
                                     </div>
                                     <div class="row pb-3 icon-view-details">
-                                        <a href="{{route('san-pham.show',$pro->slug)}}"> <div class="col" style="color: blue;">Xem chi tiết</div></a>
+                                        <a href="{{route('san-pham.show',$pro->slug)}}">
+                                            <div class="col" style="color: blue;">Xem chi tiết</div>
+                                        </a>
                                         @if (Auth::check())
                                         <form action="{{route('cart.store')}}" method="post">
                                             @csrf

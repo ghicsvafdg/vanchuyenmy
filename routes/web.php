@@ -30,6 +30,9 @@ Route::get('login/google/callback', 'Auth\LoginController@handleProviderGoogleCa
 
 //backend
 
+// ckeditor upload image
+Route::post('ckeditor/upload', 'CKEditorController@upload')->name('ckeditor.image-upload');
+
 //filter
 Route::get('manage-product/search','Backend\ProductController@filter')->name('filter');
 Route::get('manage-quotation/search','Backend\QuotationController@filter')->name('qfilter');
