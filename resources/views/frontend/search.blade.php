@@ -13,7 +13,7 @@
         </div>
     </div>   
 
-    <h2 style="text-align:center"><strong> KẾT QUẢ TÌM KIẾM CHO TỪ KHÓA "{{$search}}"</strong></h1>
+    <h1 style="text-align:center"><strong> KẾT QUẢ TÌM KIẾM CHO TỪ KHÓA "{{$search}}"</strong></h1>
     
     <!-- category -->
     @include('layouts.frontend.category')
