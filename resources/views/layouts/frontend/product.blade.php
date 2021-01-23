@@ -56,10 +56,10 @@
                                             <div class="row">
                                                 @if (!empty($pro->promotion))
                                                 <p class="main-cost">
-                                                    {{number_format( $pro->promotion, 0, ',', ' ' )}}.000đ
+                                                    <b>{{number_format( $pro->promotion, 0, ',', ' ' )}}.000đ</b>
                                                 </p>                
                                                 <p class="pt-1 abondon-text-cost">
-                                                    <b>{{number_format( $pro->price, 0, ',', ' ' )}}.000đ</b>
+                                                    {{number_format( $pro->price, 0, ',', ' ' )}}.000đ
                                                 </p>
                                                 @else
                                                 <p class="main-cost">
@@ -79,7 +79,9 @@
                                         <span class="fa fa-star" id="star"></span>
                                     </div>
                                     <div class="row pb-3 icon-view-details">
-                                        <a href="{{route('san-pham.show',$pro->slug)}}"> <div class="col" style="color: blue;">Xem chi tiết</div></a>
+                                        <a href="{{route('san-pham.show',$pro->slug)}}">
+                                            <div class="col" style="color: blue;">Xem chi tiết</div>
+                                        </a>
                                         @if (Auth::check())
                                         <form action="{{route('cart.store')}}" method="post">
                                             @csrf
