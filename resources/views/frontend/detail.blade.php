@@ -66,7 +66,7 @@
                                 <div class="mySlides pt-3 pl-3">
                                     <div class="frame">
                                         <div class="box-img">
-                                            <iframe  style="height: 360px; width: 100%;" src="{{'https://www.youtube.com/embed/'.substr($product->video,32)}}">
+                                            <iframe src="{{'https://www.youtube.com/embed/'.substr($product->video,32)}}">
                                             </iframe>
                                         </div>
                                     </div>

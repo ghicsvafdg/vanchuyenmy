@@ -9,7 +9,7 @@ body, h1, h2, h3, h4, h5, h6, p{
 }
 
 .nav_top{
-   background-color: #007bff;
+   background-color: #e13475;
    margin-bottom: 0px;
    position: relative;
    color: #ffffff;
@@ -251,7 +251,7 @@ body, h1, h2, h3, h4, h5, h6, p{
    padding: 6px 14px;
    cursor: pointer;
    margin-top: 10px;
-   background-color:#007bff; 
+   background-color:#e13475; 
    color: white; 
    border-radius: 3px;
 }
@@ -553,7 +553,7 @@ color: #000;
 
 .product-btn{
    padding: 4px 6px;
-   border: 1px solid #007bff;
+   border: 1px solid #e13475;
    border-radius: 50%;
 }
 .form-check label, .form-group label{
@@ -820,7 +820,7 @@ width: 100%;
    display: inline-flex;
 }
 #final-price #p1{
-   color: #007bff;
+   color: #e13475;
    font-size: 15px;
    margin-right: 15px;
    margin-bottom: 0px;
@@ -858,7 +858,7 @@ width: 100%;
 } */
 
 #pills-home-tab{
-   background-color: #007bff;
+   background-color: #e13475;
    color: #ffffff;
    border: none;
    display: inline-block;
@@ -880,7 +880,7 @@ width: 100%;
 }
 
 .card-product:hover {
-   border: 1px solid #007bff;
+   border: 1px solid #e13475;
    cursor: pointer;
 }
 
@@ -916,7 +916,7 @@ width: 100%;
 }
 
 #color-text-cost h3{
-   color: #007bff;
+   color: #e13475;
 }
 
 .common-cost{
@@ -924,7 +924,7 @@ width: 100%;
    
 }
 .common-cost .main-cost{
-   color: #007bff;
+   color: #e13475;
    font-size: 16px;
    margin-right: 10px;
    margin-bottom: 0px;
@@ -1069,7 +1069,7 @@ img {
 }
 
 .room-preview img:hover{
-   border: 1px solid #007bff;
+   border: 1px solid #e13475;
    opacity: 1;
    
 }
@@ -1080,7 +1080,7 @@ img {
    
 }
 .room-preview .room-active{
-   border: 1px solid #007bff;
+   border: 1px solid #e13475;
 }
 .modal-open .modal{
    padding-right: 170px !important;
@@ -1251,7 +1251,7 @@ img {
 
 #product:hover{
    opacity: 1;
-   border: 2px solid #007bff;
+   border: 2px solid #e13475;
    cursor: pointer;
 }
 
@@ -1404,7 +1404,7 @@ img {
    cursor: pointer;     
    margin-right: 7px;
    outline: none;
-   border: 1px solid #007bff;
+   border: 1px solid #e13475;
 }
 .form-radio-first:checked::before{
    position: absolute;
@@ -1420,7 +1420,7 @@ img {
 }
 
 .form-radio-first:checked{
-   background-color: #007bff;
+   background-color: #e13475;
 }
 .form-radio{
    -webkit-appearance: none;
@@ -1438,7 +1438,7 @@ img {
    cursor: pointer;     
    margin-right: 7px;
    outline: none;
-   border: 1px solid #007bff;
+   border: 1px solid #e13475;
 }
 
 .form-radio:checked::before
@@ -1456,7 +1456,7 @@ img {
 }
 .form-radio:checked
 {
-   background-color: #007bff;
+   background-color: #e13475;
 }
 label
 {
@@ -1478,7 +1478,7 @@ label
    width: 364px;
 }
 .btn-confirm{
-   background-color: #007bff;
+   background-color: #e13475;
    color: white;
    padding: 12px 20px;
    border: none;
@@ -1535,7 +1535,7 @@ label
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-   background-color: #007bff;
+   background-color: #e13475;
    color: white;
    padding: 12px 20px;
    border: none;
@@ -1688,7 +1688,7 @@ img.room-active {
    
 }
 #icon_menu{
-   color: #007bff;
+   color: #e13475;
    margin-right: 30px;
    width: 0px;
 }
@@ -1698,19 +1698,19 @@ img.room-active {
    color: black;
 }
 #fee{
-   color: #007bff;
+   color: #e13475;
 }
 #text-hidden-category a:hover{
-   color: #007bff;
+   color: #e13475;
    
 }
 
 #text-hidden-category a h4:hover{
-   color: #007bff;
+   color: #e13475;
    
 }
 .checked{
-   color: #007bff;
+   color: #e13475;
    
 }
 .list-group-item.active{
@@ -1772,7 +1772,7 @@ img.room-active {
 .openbtn {
    font-size: 15px;
    cursor: pointer;
-   background-color: #007bff;
+   background-color: #e13475;
    color: white;
    padding: 7px 18px ;
    border: none;
@@ -1783,7 +1783,7 @@ img.room-active {
    
 } */
 .page-link:hover{
-   background-color: #007bff;
+   background-color: #e13475;
    color: white;
 }
 
@@ -2160,13 +2160,13 @@ img.room-active {
    color: white;
    font-size: 12px;
    background: #fdcf51;  /* fallback for old browsers */
-   background: -webkit-linear-gradient(to right, #fdcf51, #007bff);  /* Chrome 10-25, Safari 5.1-6 */
-   background: linear-gradient(to right, #fdcf51, #007bff);
+   background: -webkit-linear-gradient(to right, #fdcf51, #e13475);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #fdcf51, #e13475);
    margin-top: 12px;
    height: 23px;
 }
 #cost p{
-   color: #007bff;
+   color: #e13475;
    margin-top: 2px;
    font-size: 25px;
    height: 20px;
@@ -2185,11 +2185,11 @@ img.room-active {
 
 #alert_demo_1{
    background-color: #fdedc4 !important;
-   color: #007bff;
+   color: #e13475;
    border:none;
    border-radius: 5px;
    cursor: pointer;
-   border: 1px solid #007bff !important;
+   border: 1px solid #e13475 !important;
    width: 190px;
    padding: 13px;
    
@@ -2310,7 +2310,7 @@ img.room-active {
 }
 
 .nav-pills.nav-secondary .nav-link.active {
-   background-color: #007bff !important;
+   background-color: #e13475 !important;
    color: #ffffff !important;
    border: none;
 }
@@ -2319,7 +2319,7 @@ img.room-active {
    padding-top: 0px;
 }
 .text-rate-star h1 small{
-   color: #007bff;
+   color: #e13475;
    
 }
 
@@ -2366,14 +2366,14 @@ img.room-active {
    
 }
 .button-footer:hover{
-   background-color: #007bff;
+   background-color: #e13475;
    color: white;
 }
 .btn-btn-cart{
    border-radius: 50%;
    cursor: pointer;
    background-color:white;
-   border: 1px solid #007bff;
+   border: 1px solid #e13475;
    padding: 4px 6px;
 }
 
@@ -2396,7 +2396,7 @@ img.room-active {
    opacity: 0.7;
 }
 .navbar .navbar-nav .nav-item .nav-link:hover {
-   background: #007bff !important;
+   background: #e13475 !important;
 }
 #carousel_horizontal1 .owl-prev{
    top: 38%
@@ -2692,7 +2692,7 @@ img.room-active {
 }
 
 .navbar {
-   background: #aedce8 !important; /* fallback for old browsers */
+   background: #ff9bac!important; /* fallback for old browsers */
    z-index: 99;
    position: relative;
    
@@ -2881,7 +2881,7 @@ img.room-active {
 
 #main-footer-computer{
    background-color: white;
-   border-top: 4px solid #007bff;
+   border-top: 4px solid #e13475;
 }
 #copyright-company{
    height: 120px;

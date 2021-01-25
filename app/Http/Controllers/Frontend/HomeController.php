@@ -32,8 +32,7 @@ class HomeController extends Controller
         $tgs = Tag::all()->sortByDesc('views')->take(12);
         
         //get all active categogies
-        $categories = ProductCategory::where([['parent_id', '=', 0],['status','=',1],])
-        ->OrderBy('order','desc')->get();
+        $categories = ProductCategory::where([['parent_id', '=', 0],['status','=',1],])->OrderBy('order','desc')->get();
         
         $product = Product::where('status',1)->get();
         
@@ -42,29 +41,25 @@ class HomeController extends Controller
         $footerPost = FooterPost::where('status',1)->get();
         
         $hotProducts = DB::table('order_details')
-        ->select('products_id', DB::raw('count(products_id) as count'))
-        ->groupBy('products_id')
-        ->get();
+            ->select('products_id', DB::raw('count(products_id) as count'))
+            ->groupBy('products_id')
+            ->get();
         
         $i = 1;
-        if(Auth::check()){
+        if (Auth::check()) {
             $cartlist = Cart::where('user_id',Auth::user()->id)->count();
             $cart = Cart::where('user_id',Auth::user()->id)->get();
             return view('frontend.index', compact('search','tags','tgs','i','categories','product','banner','posts','tags','cartlist','cart','footerPost','hotProducts'));
         }
         return view('frontend.index', compact('search','tags','tgs','i','categories','product','banner','posts','tags','footerPost','hotProducts'));
     }
-    
-    public function show($slug)
+
+    public function search(Request $request)
     {
-        
-    }
-    
-    public function search(Request $request){
-        $price=null;
-        $range=null;
+        $price = null;
+        $range = null;
         $search = $request->get('search');
-        if(empty($search)){
+        if (empty($search)) {
             return redirect()->route('index');
         }
         $slugs = HomeController::convert_vi_to_en($request->get('search'));
@@ -77,35 +72,35 @@ class HomeController extends Controller
         $tgs = Tag::all()->sortByDesc('views')->take(12);
         
         $categories = ProductCategory::where('status','=',1)
-        ->OrderBy('order','desc')
-        ->where('title', 'like', "%$search%")
-        ->orWhere('slug', 'like', "%$slugs%")
-        ->get();
+            ->OrderBy('order','desc')
+            ->where('title', 'like', "%$search%")
+            ->orWhere('slug', 'like', "%$slugs%")
+            ->get();
         
         $product = Product::where('status',1)->where('name', 'like', "%$search%")
-        ->orWhere('product_code', 'like', "%$slugs%")
-        ->orWhere('slug', 'like', "%$slugs%")
-        ->orWhere('description', 'like', "%$search%")
-        ->orWhere('content', 'like', "%$search%")->get();
+            ->orWhere('product_code', 'like', "%$slugs%")
+            ->orWhere('slug', 'like', "%$slugs%")
+            ->orWhere('description', 'like', "%$search%")
+            ->orWhere('content', 'like', "%$search%")->get();
         
         $posts = Post::where('status',1)->where('title', 'like', "%$search%")
-        ->orWhere('slug', 'like', "%$slugs%")
-        ->orWhere('description', 'like', "%$search%")
-        ->orWhere('content', 'like', "%$search%")
-        ->OrderBy('created_at','desc')
-        ->where('status',1)
-        ->where('slug', 'like', "%$search%")
-        ->limit(5)
-        ->get();
+            ->orWhere('slug', 'like', "%$slugs%")
+            ->orWhere('description', 'like', "%$search%")
+            ->orWhere('content', 'like', "%$search%")
+            ->OrderBy('created_at','desc')
+            ->where('status',1)
+            ->where('slug', 'like', "%$search%")
+            ->limit(5)
+            ->get();
         
         $footerPost = FooterPost::where('status',1)->get();
         
         $hotProducts = DB::table('order_details')
-        ->select('products_id', DB::raw('count(products_id) as count'))
-        ->groupBy('products_id')
-        ->get();
+            ->select('products_id', DB::raw('count(products_id) as count'))
+            ->groupBy('products_id')
+            ->get();
         
-        if(Auth::check()){
+        if (Auth::check()) {
             $cartlist = Cart::where('user_id',Auth::user()->id)->count();
             $cart = Cart::where('user_id',Auth::user()->id)->get();
             return view('frontend.search', compact('price','range','search','tags','tgs','categories','product','banner','posts','cartlist','cart','footerPost','hotProducts'));
@@ -117,55 +112,55 @@ class HomeController extends Controller
     public function filterSearch(Request $request){
         $search = $request->get('search');
         $slugs = HomeController::convert_vi_to_en($request->get('search'));
-        $price=null;
-        $range=null;
+        $price = null;
+        $range = null;
         $price = $request->get('price');
         $range = $request->get('range');
         $product = Product::where('status',1)->where('name', 'like', "%$search%")
-        ->orWhere('slug', 'like', "%$slugs%")
-        ->orWhere('description', 'like', "%$search%")
-        ->orWhere('content', 'like', "%$search%");
+            ->orWhere('slug', 'like', "%$slugs%")
+            ->orWhere('description', 'like', "%$search%")
+            ->orWhere('content', 'like', "%$search%");
         
-        
-        if(!empty($price)){
-            if(empty($range)){
-                if($price==1){
+        if (!empty($price)) {
+            if (empty($range)) {
+                if ($price==1) {
                     $product = $product->orderBy('price')->get();
-                }elseif($price==2){
+                } elseif ($price==2) {
                     $product = $product->orderBy('price', 'DESC')->get();
                 }
-            }else{
-                
             }
         }
         
-        if(!empty($range)){
-            if(empty($price)){
-                if($range==1){
-                    $product= Product::
-                    where('status',1)->where('name', 'like', "%$search%")->whereBetween('price',[0,200.00])->get();
-                }elseif($range==2){
-                    $product= Product::
-                    where('status',1)->where('name', 'like', "%$search%")->whereBetween('price',[200.00, 500.00])->get();
-                }elseif($range==3){
-                    $product= Product::
-                    where('status',1)->where('name', 'like', "%$search%")->whereBetween('price',[500.00,1000.00])->get();
-                }elseif($range==4){
-                    $product= Product::
-                    where('status',1)->where('name', 'like', "%$search%")->where('price','>=', 1000.00)->get();
+        if (!empty($range)) {
+            if (empty($price)) {
+                if ($range == 1) {
+                    $product = Product::where('status',1)->where('name', 'like', "%$search%")
+                        ->whereBetween('price',[0,200.00])
+                        ->get();
+                } elseif ($range == 2) {
+                    $product = Product::where('status',1)->where('name', 'like', "%$search%")
+                        ->whereBetween('price',[200.00, 500.00])
+                        ->get();
+                } elseif ($range == 3) {
+                    $product = Product::where('status',1)->where('name', 'like', "%$search%")
+                        ->whereBetween('price',[500.00,1000.00])
+                        ->get();
+                } elseif ($range == 4) {
+                    $product = Product::where('status',1)->where('name', 'like', "%$search%")
+                        ->where('price','>=', 1000.00)
+                        ->get();
                 }
             }
         }
-        if(!empty($price)&&!empty($range)){
-            $product=$product->orderBy('price')->get();
-            
-            $price=null;
-            $range=null;
-        }elseif(empty($range)&& empty($price)){
-            $product=$product->get();
+
+        if (!empty($price) && !empty($range)) {
+            $product = $product->orderBy('price')->get();
+            $price = null;
+            $range = null;
+        } elseif (empty($range) && empty($price)) {
+            $product = $product->get();
         }
-        // dd($product);
-        
+
         $banner = Banner::all();
         
         //hotTags in index
@@ -174,20 +169,20 @@ class HomeController extends Controller
         $tgs = Tag::all()->sortByDesc('views')->take(12);
         
         $categories = ProductCategory::where('status','=',1)
-        ->OrderBy('order','desc')
-        ->where('title', 'like', "%$search%")
-        ->orWhere('slug', 'like', "%$slugs%")
-        ->get();
+            ->OrderBy('order','desc')
+            ->where('title', 'like', "%$search%")
+            ->orWhere('slug', 'like', "%$slugs%")
+            ->get();
         
         $posts = Post::where('status',1)->where('title', 'like', "%$search%")
-        ->orWhere('slug', 'like', "%$slugs%")
-        ->orWhere('description', 'like', "%$search%")
-        ->orWhere('content', 'like', "%$search%")
-        ->OrderBy('created_at','desc')
-        ->where('status',1)
-        ->where('slug', 'like', "%$search%")
-        ->limit(5)
-        ->get();
+            ->orWhere('slug', 'like', "%$slugs%")
+            ->orWhere('description', 'like', "%$search%")
+            ->orWhere('content', 'like', "%$search%")
+            ->OrderBy('created_at','desc')
+            ->where('status',1)
+            ->where('slug', 'like', "%$search%")
+            ->limit(5)
+            ->get();
         
         $footerPost = FooterPost::where('status',1)->get();
         
@@ -203,8 +198,7 @@ class HomeController extends Controller
         }
         return view('frontend.search', compact('range', 'price','search','tags','tgs','categories','product','banner','posts','footerPost','hotProducts', 'search'));
     }
-    
-    
+
     function convert_vi_to_en($str) {
         $str = preg_replace("/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/", 'a', $str);
         $str = preg_replace("/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/", 'e', $str);

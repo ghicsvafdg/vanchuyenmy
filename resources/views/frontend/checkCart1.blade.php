@@ -6,7 +6,7 @@
     {{-- <div class="header">
         <div class="nav_top">
             <div class="container">
-                <div class="row" >      
+                <div class="row" style="padding: 5px 0">      
                     <div class="col-12 col-md-4 col-sm-4">
                         <div class="nav_top_left">
                             <a href="#">Hotline: 0978.485.015</a>
