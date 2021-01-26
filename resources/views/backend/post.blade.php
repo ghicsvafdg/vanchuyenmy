@@ -25,13 +25,7 @@
                                             <option  disabled selected>Bài viết theo danh mục</option>
                                             @foreach($categories as $cate)
                                             <option value="{{$cate->id}}">{{$cate->title}}</option>
-                                            {{-- @if(count($cate->childs))
-                                            <option value="{{$childs->id}}">{{$childs->title}}
-                                            @endif --}}
-                                            {{-- <option value="2">Giảm bằng tiền mặt</option> --}}
                                             @endforeach
-                                            {{-- <option value="2">Đơn vị giảm</option>
-                                            <option value="3">Số lượt dùng</option> --}}
                                         </select>
                                     </div>
                                 </div>
@@ -127,11 +121,6 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-user animated fadeIn" style="width:10%">
                                         <li>
-                                            <div>
-                                                <a class="dropdown-item btn-primary text-center btn-link" href="{{route('manage-post.show', $ps->id)}}" data-toggle="tooltip" data-placement="bottom"  title="View">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                            </div>
                                             <div>
                                                 <a class="dropdown-item btn-secondary text-center btn-link" href="{{route('manage-post.edit', $ps->id)}}" data-toggle="tooltip" data-placement="bottom" title="Edit">
                                                     <i class="fas fa-pencil-alt"></i>

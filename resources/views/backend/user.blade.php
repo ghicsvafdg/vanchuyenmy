@@ -122,9 +122,6 @@
                             <td class="noExl">
                                 <div class="row">
                                     <div class="col-4">
-                                        <a href="{{route('manage-user.show', $us->id)}}"  data-toggle="tooltip" data-placement="bottom"  title="View" class="btn btn-icon btn-primary btn-xs"><i class="fas fa-eye"></i> </a>
-                                    </div>
-                                    <div class="col-4">
                                         <a href="{{route('manage-user.edit', $us->id)}}" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-icon btn-secondary btn-xs"><i class="fas fa-pencil-alt"></i></a>
                                     </div>
                                     <form action="{{ route('manage-user.destroy', $us->id)}}" method="post" class="test col-4">

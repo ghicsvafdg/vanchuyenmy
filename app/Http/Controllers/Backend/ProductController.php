@@ -116,13 +116,7 @@ class ProductController extends Controller
      */
     public function show($slug)
     {
-        if (!(Auth::check() && Auth::user()->role == 0)) {
-            return redirect()->route('login');
-        }
-        $product = Product::where('slug', 'like', "$slug%")->first();
-        $image = json_decode($product->filename);
-        $allTag = Tag::all();
-        return view('backend.showProduct', compact('product', 'image', 'allTag'));
+        abort(404);
     }
 
     /**

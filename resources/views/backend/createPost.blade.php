@@ -51,38 +51,19 @@
                     @endforeach
                 </div>
             </div>
-        </div>
-        
-        <div class="card-footer">
-            <div class="row">
-                <div class="col-6 text-right">
-                    <a href="{{route('manage-post.index')}}" class="btn btn-danger">Hủy</a>
-                </div>
-                <div class="col-6 text-left">
-                    <button type="submit" class="btn btn-primary">Thêm</button>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-6 text-right">
+                        <a href="{{route('manage-post.index')}}" class="btn btn-danger">Hủy</a>
+                    </div>
+                    <div class="col-6 text-left">
+                        <button type="submit" class="btn btn-primary">Thêm</button>
+                    </div>
                 </div>
             </div>
-        </div>
-
-    </form>
+        </form>
+    </div>
 </div>
 @endsection
 @section('script')
-{{-- <script>
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            
-            reader.onload = function(e) {
-                $('#blah').attr('src', e.target.result);
-            }
-            
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    
-    $("#imgInp").change(function() {
-        readURL(this);
-    });
-</script> --}}
 @endsection

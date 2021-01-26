@@ -86,19 +86,19 @@
                 @endif
                 @endforeach
             </div>
-        </div>
         
-        <div class="card-footer">
-            <div class="row">
-                <div class="col-6 text-right">
-                    <a href="{{route('manage-product.index')}}" class="btn btn-danger">Hủy</a>
-                </div>
-                <div class="col-6 text-left">
-                    <button type="submit" class="btn btn-primary">Sửa sản phẩm</button>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-6 text-right">
+                        <a href="{{route('manage-product.index')}}" class="btn btn-danger">Hủy</a>
+                    </div>
+                    <div class="col-6 text-left">
+                        <button type="submit" class="btn btn-primary">Sửa sản phẩm</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 @endsection
 @section('script')

@@ -89,13 +89,7 @@ class UserController extends Controller
 
     public function show($id)
     {
-        if (Auth::check() && Auth::user()->role == 0) {
-            $user = User::find($id);
-            // return $user;
-            return view('backend.showUser', compact('user'));
-        } else {
-            return redirect('index');
-        }
+        abort(404);
     }
 
     public function filter(Request $request)

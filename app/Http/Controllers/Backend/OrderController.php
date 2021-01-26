@@ -37,7 +37,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        abort(404);
     }
 
     /**
@@ -48,6 +48,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        abort(404);
     }
 
     /**
@@ -58,11 +59,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        if (!(Auth::check() && Auth::user()->role == 0)) {
-            return redirect()->route('index');
-        }
-        $order = Order::findOrFail($id);
-        return view('backend.showOrder', compact('order'));
+        abort(404);
     }
 
     /**

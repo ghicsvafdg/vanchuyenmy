@@ -159,11 +159,6 @@
                                 <ul class="dropdown-menu dropdown-user animated fadeIn" style="width:10%">
                                     <li>
                                         <div>
-                                            <a class="dropdown-item btn-primary text-center btn-link" href="{{route('manage-product.show', $pr->slug)}}" data-toggle="tooltip" data-placement="bottom"  title="View">
-                                                <i class="fas fa-eye"></i>
-                                            </a>
-                                        </div>
-                                        <div>
                                             <a class="dropdown-item btn-secondary text-center btn-link" href="{{route('manage-product.edit', $pr->id)}}" data-toggle="tooltip" data-placement="bottom" title="Edit">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
