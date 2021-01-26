@@ -77,7 +77,7 @@
                                     <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
                                         <div class="box-img">
                                             <a href="{{asset('images/'.$image)}}">
-                                                <img src="{{asset('images/'.$image)}}" class="img-fluid" alt="" style="height: 360px; width: 100%;"/>
+                                                <img src="{{asset('images/'.$image)}}" class="img-fluid" alt=""/>
                                             </a>
                                         </div>
                                     </div>

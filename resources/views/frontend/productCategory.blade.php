@@ -73,7 +73,7 @@
                         <a class="nav-link" id="pills-newest-tab" data-toggle="pill" href="#pills-newest" role="tab" aria-controls="pills-newest" aria-selected="false">Mới Nhất</a> 
                     </li>
                     <div>
-                        <form action="{{route('filter-product-cate', $category->id)}}" method="GET">
+                        <form action="{{route('filter-product-cate', $category->id)}}" method="GET" style="display: flex">
                             @csrf
                             <li class="nav-item">
                                 <select name="price" class="form-control input-fixed" id="range-price" style="margin-top: 5px; width: 200px;">
