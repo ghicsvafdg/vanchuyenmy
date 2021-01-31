@@ -71,7 +71,7 @@ class ProductController extends Controller
             }
 
             $form = new Product();
-            $form->filename=json_encode($data);
+            $form->filename = json_encode($data);
             $form->name = $request->get('name');
             $form->category_id = $request->get('category');
             $form->quantity = $request->get('quantity');
@@ -103,7 +103,7 @@ class ProductController extends Controller
                 }
             }
 
-            return redirect()->route('manage-product.show', $slug)->with('success', 'Thêm sản phẩm thành công!');
+            return redirect()->route('manage-product.index', $slug)->with('success', 'Thêm sản phẩm thành công!');
         }
         return back()->with('error', 'Sản phẩm cần có ít nhất một ảnh mô tả hoặc mỗi ảnh dung lượng không quá 2MB ');
     }

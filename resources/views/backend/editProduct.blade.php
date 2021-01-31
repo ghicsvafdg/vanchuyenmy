@@ -5,7 +5,7 @@
         <h3>Sửa thông tin sản phẩm <b>{{$product->name}}</b></h3> 
     </div>
     <div class="card-body">
-        <form action="{{route('manage-product.update',$product->id)}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('manage-product.update',$product->id)}}" id="mainform" method="POST" enctype="multipart/form-data">
             @method('PATCH')           
             @csrf
             <label>Danh mục sản phẩm: </label>
@@ -40,12 +40,16 @@
             @endforeach
             <br>
             <label>Ảnh sản phẩm</label><br>
-            <strong>định dạng: jpeg,png,jpg,gif,svg | tối đa: 2MB mỗi ảnh</strong>
+            <strong>định dạng: jpeg, png, jpg, gif, svg | tối đa: 2MB mỗi ảnh</strong>
             <br><strong>Nếu không thêm, ảnh cũ sản phẩm sẽ được giữ nguyên</strong>
-            <input type="file" class="form-control" name="filename[]" id="file" accept="image/*" multiple />
+            <button type="button" onclick="add_field()" class="btn btn-primary">ADD IMAGES</button>
+            <div class="row getImage"></div>
             <br>
-            <label>Mô Tả</label>
-            <textarea name="description" id="editor2" cols="30" rows="10" placeholder="Phần mô tả ngắn sẽ hiện lên trang chủ cùng tiêu đề" class="form-control @error('description') is-invalid @enderror" required >{{ old('description') }} {{$product->description}}</textarea>
+            <div>
+                <label>Mô Tả</label>
+                <textarea name="description" id="editor2" cols="30" rows="10" placeholder="Phần mô tả ngắn sẽ hiện lên trang chủ cùng tiêu đề"
+                          class="form-control @error('description') is-invalid @enderror" required >{{ old('description') }} {{$product->description}}</textarea>
+            </div>
             <br>
             <label>Chi tiết sản phẩm: </label>
             <textarea name="content" class="form-control @error('content') is-invalid @enderror" id="editor1" required>{{ old('content') }} {{$product->content}}</textarea>
@@ -102,5 +106,37 @@
 </div>
 @endsection
 @section('script')
+    <script>
+        function add_field() {
+            var x = $("#mainform");
+            var row_div = $("#mainform .getImage ");
+            var count = $("#mainform .getImage div").length; // get divs count
 
+            // create an input field to insert
+            var new_field = "<input type='file' name='filename[]' accept='image/*' class='form-control col' id='img"+count+"'/>"
+
+            // preview
+            var preview = "<img src='#' id='preview-img"+count+"' height='250px' width='250px'>";
+
+            // insert element
+            row_div.append('<div class="col-3">'+ preview + new_field +'</div>');
+
+            $("form#mainform input[type='file']").change(function(){
+                readURL(this);
+            });
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    imgId = '#preview-'+$(input).attr('id');
+                    $(imgId).attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
 @endsection

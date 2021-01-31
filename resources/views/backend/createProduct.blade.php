@@ -6,7 +6,7 @@
     </div>
     
     <div class="card-body">
-        <form action="{{route('manage-product.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('manage-product.store')}}" method="POST" id="mainform" enctype="multipart/form-data">
             @csrf
             <label>Danh mục sản phẩm: </label>
             <select class="form-control @error('category') is-invalid @enderror" name="category" value="{{ old('category') }}">
@@ -36,11 +36,15 @@
             <input type="text" name="video" class="form-control">
             <br>
             <label>Ảnh sản phẩm</label><br>
-            <strong>định dạng: jpeg,png,jpg,gif,svg | tối đa: 2MB mỗi ảnh</strong>
-            <input type="file" class="form-control" name="filename[]" id="file" accept="image/*" multiple />
+            <strong>định dạng: jpeg, png, jpg, gif, svg | tối đa: 2MB mỗi ảnh</strong>
+            <button type="button" onclick="add_field()" class="btn btn-primary">ADD IMAGES</button>
+            <div class="row getImage"></div>
             <br>
-            <label>Số lượng: </label>
-            <input type="text" name="quantity" class="form-control">
+            <br>
+            <div>
+                <label>Số lượng: </label>
+                <input type="text" name="quantity" class="form-control">
+            </div>
             <br>
             <label>Các màu của sản phẩm (nếu có)</label><br>
             <strong>ghi tên màu sản phẩm dưới dạng: đỏ, xanh, vàng, tím,...</strong>
@@ -67,8 +71,6 @@
             <label>Chi tiết sản phẩm: </label>
             <textarea name="content" class="form-control" id="editor2"></textarea>
             <br>
-            
-            
             <div class="row">
                 <div class="col-12 row">
                     <div class="col-3">
@@ -86,7 +88,6 @@
                 </div>
                 <div class="col"></div>
             </div>
-            
             <br>
             <div class="row">
                 <div class="col-3">
@@ -99,10 +100,7 @@
                     @endforeach
                 </div>
             </div>
-            
-        </div>
-        
-        <div class="card-footer">
+            <div class="card-footer">
             <div class="row">
                 <div class="col-6 text-right">
                     <a href="{{route('manage-product.index')}}" class="btn btn-danger">Hủy</a>
@@ -112,11 +110,42 @@
                 </div>
             </div>
         </div>
-    </form>
+        </form>
+    </div>
 </div>
 @endsection
 @section('script')
+<script>
+    function add_field() {
+        var x = $("#mainform");
+        var row_div = $("#mainform .getImage ");
+        var count = $("#mainform .getImage div").length; // get divs count
 
+        // create an input field to insert
+        var new_field = "<input type='file' name='filename[]' accept='image/*' class='form-control col' id='img"+count+"'/>"
 
+        // preview
+        var preview = "<img src='#' id='preview-img"+count+"' height='250px' width='250px'>";
 
+        // insert element
+        row_div.append('<div class="col-3">'+ preview + new_field +'</div>');
+
+        $("form#mainform input[type='file']").change(function(){
+            readURL(this);
+        });
+    }
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                imgId = '#preview-'+$(input).attr('id');
+                $(imgId).attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
 @endsection

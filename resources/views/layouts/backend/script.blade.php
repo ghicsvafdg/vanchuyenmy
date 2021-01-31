@@ -66,17 +66,17 @@
     function toggle(source) {
         checkboxes = document.getElementsByName('foo');
         bn = document.getElementById('bulk');
-        for(var i=0, n=checkboxes.length;i<n;i++) {
+        for (var i=0, n=checkboxes.length;i<n;i++) {
             checkboxes[i].checked = source.checked;
-            if(checkboxes[i].checked = source.checked){
+            if (checkboxes[i].checked = source.checked) {
                 bn.disabled = false;
-            }else{
+            } else {
                 bn.disabled = true;
             }
         }
     }
     $(function() {
-        $(".checkbox").click(function(){
+        $(".checkbox").click(function() {
             $('#bulk').prop('disabled',$('input.checkbox:checked').length == 0);
         });
     });
@@ -121,8 +121,8 @@
                     '<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
                     '</div>' +
                     '<a href="{3}" target="{4}" data-notify="url"></a>' +
-                    '</div>' 
-                });      
+                    '</div>'
+        });
     </script>
 @elseif(session('error'))
     <script>
@@ -156,8 +156,8 @@
                     '<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
                     '</div>' +
                     '<a href="{3}" target="{4}" data-notify="url"></a>' +
-                    '</div>' 
-                });      
+                    '</div>'
+        });
     </script>
 @endif
 {{-- code status end --}}
