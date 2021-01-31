@@ -51,7 +51,7 @@
         @foreach ($banner as $bn)
         @if ($bn->section == 3)
             <a href="{{$bn->web_link}}">
-                <img src="{{asset('banner/'.$bn->filename)}}" class="img-fluid" alt="...">
+                <img src="{{asset('banner/'.$bn->filename)}}" class="img-fluid" alt="banner khu vực 3">
             </a>
         @endif
         @endforeach
