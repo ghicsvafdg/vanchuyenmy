@@ -44,13 +44,13 @@
                     @endforeach
                     <div class="carousel-item active">
                         <a href="{{$array[0]->web_link}}">
-                            <img src="{{asset('banner/'.$array[0]->filename)}}" class="img-fluid" alt="...">
+                            <img src="{{asset('banner/'.$array[0]->filename)}}" class="img-fluid" alt="banner khu vực 6">
                         </a>
                     </div>
                     @for ($i = 1; $i < count($array); $i++)
                         <div class="carousel-item">
                             <a href="{{$array[$i]->web_link}}">
-                                <img src="{{asset('banner/'.$array[$i]->filename)}}" class="img-fluid" alt="...">
+                                <img src="{{asset('banner/'.$array[$i]->filename)}}" class="img-fluid" alt="banner khu vực 6">
                             </a>
                         </div>
                     @endfor

@@ -11,13 +11,13 @@
                     @endforeach
                     <div class="carousel-item active">
                         <a href="{{$array[0]->web_link}}">
-                            <img src="{{asset('banner/'.$array[0]->filename)}}" class="img-fluid" alt="...">
+                            <img src="{{asset('banner/'.$array[0]->filename)}}" class="img-fluid" alt="banner khu vực 1">
                         </a>
                     </div>
                     @for ($i = 1; $i < count($array); $i++)
                         <div class="carousel-item">
                             <a href="{{$array[$i]->web_link}}">
-                                <img src="{{asset('banner/'.$array[$i]->filename)}}" class="img-fluid" alt="...">
+                                <img src="{{asset('banner/'.$array[$i]->filename)}}" class="img-fluid" alt="banner khu vực 1">
                             </a>
                         </div>
                     @endfor
@@ -39,7 +39,7 @@
                     @if ($bn->section == 2)
                         <div class="px-0 col-6">
                             <a href="{{$bn->web_link}}">
-                                <img src="{{asset('banner/'.$bn->filename)}}" class="img-fluid" alt="..." >
+                                <img src="{{asset('banner/'.$bn->filename)}}" class="img-fluid" alt="banner khu vực 2" >
                             </a>
                         </div>
                     @endif
