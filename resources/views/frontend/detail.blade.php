@@ -282,7 +282,7 @@
                                     </div>
                                     {{-- banner 4 --}}
                                     <div class="px-0 col-lg-4 d-none d-lg-block">
-                                        @if($banner != null)
+                                        @if(!$banner->isEmpty())
                                             @foreach ($banner as $bn)
                                             @if ($bn->section == 4)
                                                 <a href="{{$bn->web_link}}">
@@ -331,7 +331,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-3 d-none d-lg-block">
-                                @if($banner != null)
+                                @if(!$banner->isEmpty())
                                     @foreach ($banner as $bn)
                                     @if ($bn->section == 5)
                                         <a href="{{$bn->web_link}}">

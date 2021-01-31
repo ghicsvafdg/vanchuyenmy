@@ -37,7 +37,7 @@
         <div class="row pl-3 pb-4">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
                 <div class="carousel-inner">
-                    @if($banner != null)
+                    @if(!$banner->isEmpty())
                         @foreach ($banner as $bn)
                             @if ($bn->section == 6)
                                 <?php $array[] = $bn; ?>

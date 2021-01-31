@@ -4,7 +4,7 @@
             
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    @if($banner != null)
+                    @if(!$banner->isEmpty())
                         @foreach ($banner as $bn)
                             @if ($bn->section == 1)
                                 <?php $array[] = $bn; ?>
@@ -37,7 +37,7 @@
         </div>
         <div class="pl-lg-0 col-12 col-md-4 col-lg-4">
             <div class="row">
-                @if($banner != null)
+                @if(!$banner->isEmpty())
                     @foreach ($banner as $bn)
                         @if ($bn->section == 2)
                             <div class="px-0 col-6">
@@ -52,7 +52,7 @@
         </div>
     </div>
     <div class="pl-0 d-none d-lg-block row">
-        @if($banner != null)
+        @if(!$banner->isEmpty())
             @foreach ($banner as $bn)
             @if ($bn->section == 3)
                 <a href="{{$bn->web_link}}">
