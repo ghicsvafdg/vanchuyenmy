@@ -37,11 +37,11 @@
             <div class="row">
                 @foreach ($banner as $bn)
                     @if ($bn->section == 2)
-                        @for ($i = 0; $i < count(json_decode($bn->filename),true); $i++)
                         <div class="px-0 col-6">
-                            <img src="{{asset('banner/'.json_decode($bn->filename)[$i])}}" class="img-fluid" alt="..." >
+                            <a href="{{$bn->web_link}}">
+                                <img src="{{asset('banner/'.$bn->filename)}}" class="img-fluid" alt="..." >
+                            </a>
                         </div>
-                        @endfor
                     @endif
                 @endforeach
             </div>
