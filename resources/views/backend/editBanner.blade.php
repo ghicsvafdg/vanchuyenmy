@@ -59,16 +59,21 @@
         @method('PATCH')           
         @csrf
         <div class="card-body">
-        
             <label>Chọn khu vực: </label>
-            <select class="form-control @error('section') is-invalid @enderror" name="section" value="" disabled>
-                <option selected value="{{$banner->section}}">{{$banner->section}}</option>
+            <select class="form-control @error('section') is-invalid @enderror" name="section">
+                <option @if($banner->section == 1) selected @endif value="1">1</option>
+                <option @if($banner->section == 2) selected @endif value="2">2</option>
+                <option @if($banner->section == 3) selected @endif value="3">3</option>
+                <option @if($banner->section == 4) selected @endif value="4">4</option>
+                <option @if($banner->section == 5) selected @endif value="5">5</option>
+                <option @if($banner->section == 6) selected @endif value="6">6</option>
             </select>
             @error('section')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
             @enderror
+
             <label>Tên banner: </label>
             <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ $banner->name }}" required>
             @error('name')
@@ -76,9 +81,18 @@
                 <strong>{{ $message }}</strong>
             </span>
             @enderror
+
+            <label>Link: </label>
+            <input class="form-control @error('link') is-invalid @enderror" type="text" name="link" value="{{ $banner->web_link }}" required>
+            @error('link')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+
             <label>Upload Banner</label><br>
-            <strong>định dạng: jpeg,png,jpg,gif,svg | tối đa: 2MB mỗi ảnh</strong>
-            <input type="file" class="form-control" name="filename[]" id="file" accept="image/*" multiple />
+            <strong>định dạng: jpeg, png, jpg, gif, svg | tối đa: 2MB mỗi ảnh</strong>
+            <input type="file" class="form-control" name="filename" id="file" accept="image/*"/>
         </div>    
         <div class="card-footer">
             <div class="row">

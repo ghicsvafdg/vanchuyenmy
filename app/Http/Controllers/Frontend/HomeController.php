@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         $banner = Banner::all();
-        $search=null;
+        $search = null;
         
         //hotTags in index
         $tags = Tag::all()->sortByDesc('views')->take(6);

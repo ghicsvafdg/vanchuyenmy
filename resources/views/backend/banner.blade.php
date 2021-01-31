@@ -58,15 +58,6 @@
         <div class="card-body">
             <div class="table-responsive">
                 <div class="row">
-                    <div class="btn-group col-6">     
-                        <button type="button" id="bulk" class="btn btn-primary dropdown-toggle btn-small" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
-                            Lựa chọn
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Xóa</a>
-                        </div>
-                        
-                    </div>
                     <div class="col-6">
                         <a href="{{route('manage-banner.create')}}" class="btn btn-primary btn-small">
                             <span class="btn-label">
@@ -83,28 +74,14 @@
                     <!-- Example single danger button -->
                     <thead>
                         <tr>
-                            <th>
-                                <input type="checkbox" onClick="toggle(this)" class="checkall"/><br/>
-                            </th>
                             <th>Tên banner</th>
                             <th>Nơi hiển thị</th>
                             <th>Hành động</th>
                         </tr>
                     </thead>
-                    {{-- <tfoot>
-                        <tr>
-                            <th>
-                                
-                            </th>
-                            <th>Tên banner</th>
-                            <th>Nơi hiển thị</th>
-                            <th>Hành động</th>
-                        </tr>
-                    </tfoot> --}}
                     <tbody>
                         @foreach ($banner as $bn)
                         <tr>
-                            <td><input type="checkbox" name="foo" value="" class="checkbox"></td>
                             <td>
                                 {{$bn->name}}
                             </td>
@@ -113,9 +90,6 @@
                             </td>
                             <td>
                                 <div class="row">
-                                    <div class="col-4">
-                                        <a href="{{route('manage-banner.show', $bn->id)}}"  data-toggle="tooltip" data-placement="bottom"  title="View" class="btn btn-icon btn-primary btn-xs"><i class="fas fa-eye"></i> </a>
-                                    </div>
                                     <div class="col-4">
                                         <a href="{{route('manage-banner.edit', $bn->id)}}" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-icon btn-secondary btn-xs"><i class="fas fa-pencil-alt"></i></a>
                                     </div>
@@ -162,7 +136,6 @@
                         }
                     }
                 }).then((Delete) => {
-                    
                     if (Delete) {
                         if (Delete) {
                             $form.submit();

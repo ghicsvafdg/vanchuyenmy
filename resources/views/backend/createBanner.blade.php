@@ -74,6 +74,7 @@
                 <strong>{{ $message }}</strong>
             </span>
             @enderror
+
             <label>Tên banner: </label>
             <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}" required>
             @error('name')
@@ -81,9 +82,13 @@
                 <strong>{{ $message }}</strong>
             </span>
             @enderror
+
+            <label>Link: </label>
+            <input class="form-control @error('link') is-invalid @enderror" type="text" name="link" value="{{ old('link') }}" required>
+
             <label>Upload Banner</label><br>
-            <strong>định dạng: jpeg,png,jpg,gif,svg | tối đa: 2MB mỗi ảnh</strong>
-            <input type="file" class="form-control" name="filename[]" id="file" accept="image/*" multiple />
+            <strong>định dạng: jpeg, png, jpg, gif, svg | tối đa: 2MB mỗi ảnh</strong>
+            <input type="file" class="form-control" name="filename" id="file" accept="image/*"/>
         </div>    
         <div class="card-footer">
             <div class="row">

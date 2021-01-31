@@ -20,7 +20,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        if(Auth::check()){
+        if (Auth::check()) {
             $i =1;
             $sum = 0;
 

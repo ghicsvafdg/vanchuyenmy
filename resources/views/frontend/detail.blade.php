@@ -284,8 +284,10 @@
                                     <div class="px-0 col-lg-4 d-none d-lg-block">
                                         @foreach ($banner as $bn)
                                         @if ($bn->section == 4)
-                                        <img class="img-fluid" src="{{asset('banner/'.json_decode($bn->filename)[0])}}" style="padding-right: 10px;" alt="Banner khu vực 4">
-                                        @endif    
+                                            <a href="{{$bn->web_link}}">
+                                                <img class="img-fluid" src="{{asset('banner/'.$bn->filename)}}" style="padding-right: 10px;" alt="Banner khu vực 4">
+                                            </a>
+                                        @endif
                                         @endforeach     
                                     </div>
                                     {{-- end banner 4 --}}
@@ -328,10 +330,11 @@
                             </div>
                             <div class="col-lg-3 d-none d-lg-block">
                                 @foreach ($banner as $bn)
-                                @if ($bn->section == 5)
-                                <img class="img-fluid" src="{{asset('banner/'.json_decode($bn->filename)[0])}}"  alt="Banner khu vực 5" height="445" width="220">
-                                <img class="img-fluid" src="{{asset('banner/'.json_decode($bn->filename)[1])}}"  alt="Banner khu vực 5" height="445" width="220" style="margin-top:80px;">
-                                @endif  
+                                    @if ($bn->section == 5)
+                                        <a href="{{$bn->web_link}}">
+                                            <img class="img-fluid" src="{{asset('banner/'.$bn->filename)}}"  alt="Banner khu vực 5" height="445" width="220">
+                                        </a>
+                                    @endif
                                 @endforeach                                               
                             </div>
                         </div>

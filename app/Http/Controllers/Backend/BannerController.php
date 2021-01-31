@@ -47,43 +47,39 @@ class BannerController extends Controller
         if (!(Auth::check() && Auth::user()->role == 0)) {
             return redirect()->route('index');
         }
-        $rule = ([
-            'section' => ['unique:banners'],
-        ]);
-        $this->validate($request, $rule);
+
+        $section = $request->get('section');
+        $checkNumberBanners = Banner::where('section', $section)->count();
+
+        if ($checkNumberBanners >= 5 && $request->get('section') == 1) {
+            return back()->with('error', 'Khu vực 1 chỉ tối đa 5 banner');
+        } elseif ($checkNumberBanners >= 4 && $request->get('section') == 2) {
+            return back()->with('error', 'Khu vực 2 chỉ tối đa 4 banner');
+        } elseif ($checkNumberBanners >= 1 && $request->get('section') == 3) {
+            return back()->with('error', 'Khu vực 3 chỉ tối đa 1 banner');
+        } elseif ($checkNumberBanners >= 1 && $request->get('section') == 4) {
+            return back()->with('error', 'Khu vực 4 chỉ tối đa 1 banner');
+        } elseif ($checkNumberBanners >= 2 && $request->get('section') == 5) {
+            return back()->with('error', 'Khu vực 5 chỉ tối đa 2 banner');
+        } elseif ($checkNumberBanners >= 5 && $request->get('section') == 6) {
+            return back()->with('error', 'Khu vực 6 chỉ tối đa 5 banner');
+        }
 
         if ($request->hasfile('filename')) {
-            foreach ($request->file('filename') as $image) {
-                $name=$image->getClientOriginalName();
-                $image->move(public_path() . '/banner/', $name);
-                $data[] = $name;
-            }
+            $image = $request->file('filename');
+            $name = $image->getClientOriginalName();
+            $image->move(public_path() . '/banner/', $name);
 
-            if ((count($data) > 5) && $request->get('section') == 1) {
-                return back()->with('error', 'Khu vực 1 chỉ tối đa 5 banner');
-            } elseif ((count($data)) > 4 && $request->get('section') == 2) {
-                return back()->with('error', 'Khu vực 2 chỉ tối đa 4 banner');
-            } elseif ((count($data)) > 1 && $request->get('section') == 3) {
-                return back()->with('error', 'Khu vực 3 chỉ tối đa 1 banner');
-            } elseif ((count($data)) > 1 && $request->get('section') == 4) {
-                return back()->with('error', 'Khu vực 4 chỉ tối đa 1 banner');
-            } elseif ((count($data)) > 2 && $request->get('section') == 5) {
-                return back()->with('error', 'Khu vực 5 chỉ tối đa 2 banner');
-            } elseif ((count($data)) > 5 && $request->get('section') == 6) {
-                return back()->with('error', 'Khu vực 6 chỉ tối đa 5 banner');
-            }
-            $form= new Banner();
-            $form->filename=json_encode($data);
-
+            $form = new Banner();
+            $form->filename = $name;
             $form->name = $request->get('name');
             $form->section = $request->get('section');
-
+            $form->web_link = $request->get('link');
             $form->save();
 
             return back()->with('success', 'Thêm banner thành công!');
         }
-
-        return back()->with('error', 'Banner cần có ít nhất một ảnh mô tả hoặc mỗi ảnh dung lượng không quá 2MB ');
+        return back()->with('error', 'Banner cần có ít nhất một ảnh mô tả hoặc mỗi ảnh dung lượng không quá 2MB');
     }
 
     /**
@@ -94,7 +90,7 @@ class BannerController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -124,38 +120,37 @@ class BannerController extends Controller
         if (!(Auth::check() && Auth::user()->role == 0)) {
             return redirect()->route('index');
         }
-        
+
+        $section = $request->get('section');
+        $checkNumberBanners = Banner::where('section', $section)->count();
+
+        if ($checkNumberBanners >= 5 && $request->get('section') == 1) {
+            return back()->with('error', 'Khu vực 1 chỉ tối đa 5 banner');
+        } elseif ($checkNumberBanners >= 4 && $request->get('section') == 2) {
+            return back()->with('error', 'Khu vực 2 chỉ tối đa 4 banner');
+        } elseif ($checkNumberBanners >= 1 && $request->get('section') == 3) {
+            return back()->with('error', 'Khu vực 3 chỉ tối đa 1 banner');
+        } elseif ($checkNumberBanners >= 1 && $request->get('section') == 4) {
+            return back()->with('error', 'Khu vực 4 chỉ tối đa 1 banner');
+        } elseif ($checkNumberBanners >= 2 && $request->get('section') == 5) {
+            return back()->with('error', 'Khu vực 5 chỉ tối đa 2 banner');
+        } elseif ($checkNumberBanners >= 5 && $request->get('section') == 6) {
+            return back()->with('error', 'Khu vực 6 chỉ tối đa 5 banner');
+        }
+
         $form = Banner::find($id);
         if ($request->hasfile('filename')) {
-            foreach ($request->file('filename') as $image) {
-                $name = $image->getClientOriginalName();
-                $image->move(public_path() . '/banner/', $name);
-                $data[] = $name;
-            }
+            $image = $request->file('filename');
+            $name = $image->getClientOriginalName();
+            $image->move(public_path() . '/banner/', $name);
 
-            if ((count($data) > 5) && $request->get('section') == 1) {
-                return back()->with('error', 'Khu vực 1 chỉ tối đa 5 banner');
-            } elseif ((count($data)) > 4 && $request->get('section') == 2) {
-                return back()->with('error', 'Khu vực 2 chỉ tối đa 4 banner');
-            } elseif ((count($data)) > 1 && $request->get('section') == 3) {
-                return back()->with('error', 'Khu vực 3 chỉ tối đa 1 banner');
-            } elseif ((count($data)) > 1 && $request->get('section') == 4) {
-                return back()->with('error', 'Khu vực 4 chỉ tối đa 1 banner');
-            } elseif ((count($data)) > 2 && $request->get('section') == 5) {
-                return back()->with('error', 'Khu vực 5 chỉ tối đa 2 banner');
-            } elseif ((count($data)) > 5 && $request->get('section') == 6) {
-                return back()->with('error', 'Khu vực 6 chỉ tối đa 5 banner');
-            }
-
-            $form->filename = json_encode($data);
-
+            $form->filename = $name;
             $form->name = $request->get('name');
-
+            $form->web_link = $request->get('link');
             $form->save();
 
             return redirect()->route('manage-banner.index')->with('success', 'Sửa thông tin banner thành công!');
         }
-
         return back()->with('error', 'Banner cần có ít nhất một ảnh mô tả hoặc mỗi ảnh dung lượng không quá 2MB ');
     }
 

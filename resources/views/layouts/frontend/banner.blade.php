@@ -6,16 +6,21 @@
                 <div class="carousel-inner">
                     @foreach ($banner as $bn)
                         @if ($bn->section == 1)
-                        <div class="carousel-item active">
-                            <img src="{{asset('banner/'.json_decode($bn->filename)[0])}}" class="img-fluid" alt="...">
-                        </div>
-                        @for ($i = 1; $i < count(json_decode($bn->filename,true)); $i++)
-                        <div class="carousel-item">
-                            <img src="{{asset('banner/'.json_decode($bn->filename)[$i])}}" class="img-fluid" alt="...">
-                        </div>
-                        @endfor
+                            <?php $array[] = $bn; ?>
                         @endif
                     @endforeach
+                    <div class="carousel-item active">
+                        <a href="{{$array[0]->web_link}}">
+                            <img src="{{asset('banner/'.$array[0]->filename)}}" class="img-fluid" alt="...">
+                        </a>
+                    </div>
+                    @for ($i = 1; $i < count($array); $i++)
+                        <div class="carousel-item">
+                            <a href="{{$array[$i]->web_link}}">
+                                <img src="{{asset('banner/'.$array[$i]->filename)}}" class="img-fluid" alt="...">
+                            </a>
+                        </div>
+                    @endfor
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -45,7 +50,9 @@
     <div class="pl-0 d-none d-lg-block row">
         @foreach ($banner as $bn)
         @if ($bn->section == 3)
-            <img src="{{asset('banner/'.json_decode($bn->filename)[0])}}" class="img-fluid" alt="...">
+            <a href="{{$bn->web_link}}">
+                <img src="{{asset('banner/'.$bn->filename)}}" class="img-fluid" alt="...">
+            </a>
         @endif
         @endforeach
     </div>
