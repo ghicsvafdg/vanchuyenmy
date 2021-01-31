@@ -14,6 +14,11 @@ use App\Models\Tag;
 
 class ProductCategoryController extends Controller
 {
+    public function index()
+    {
+        abort(404);
+    }
+
     /**
      * Display the specified resource.
      *
@@ -22,8 +27,11 @@ class ProductCategoryController extends Controller
      */
     public function show($slug)
     {
-        // dd($slug);
-        $category = ProductCategory::where('slug','like',"$slug%")->first();
+        $category = ProductCategory::where('slug','like', $slug)->first();
+
+        if (!$category) {
+            abort(404);
+        }
 
         $banner = Banner::all();
         $product = Product::where('category_id', '=', $category->id)->paginate(12);
@@ -39,7 +47,7 @@ class ProductCategoryController extends Controller
             
         $newest = Product::where('category_id', '=', $category->id)->orderBy('created_at', 'DESC')->paginate(12);
         $footerPost = FooterPost::where('status',1)->get();
-        if(Auth::check()){
+        if (Auth::check()) {
             
             $cartlist = Cart::where('user_id',Auth::user()->id)->count();
             $cart = Cart::where('user_id',Auth::user()->id)->get();
@@ -123,5 +131,15 @@ class ProductCategoryController extends Controller
             return view('frontend.productCategory', compact('tags','tgs','categories','banner','product','category','cartlist','cart','footerPost', 'newest'));
         }
         return view ('frontend.productCategory',compact('tags','tgs','categories','banner','product','category','footerPost',  'newest'));
+    }
+
+    public function create()
+    {
+        abort(404);
+    }
+
+    public function edit($id)
+    {
+        abort(404);
     }
 }

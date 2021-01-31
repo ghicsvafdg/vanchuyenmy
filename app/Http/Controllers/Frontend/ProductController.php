@@ -19,12 +19,22 @@ use App\Models\Tag;
 
 class ProductController extends Controller
 {
+    public function index()
+    {
+        abort(404);
+    }
+
     public function show($slug)
     {
         $i = 2;
         $z = 1;
 
         $product = Product::where('slug', $slug)->first();
+
+        if (!$product) {
+            abort(404);
+        }
+
         $relateProduct = Product::where([['id','!=',$product->id],['category_id',$product->category_id]])->get();
 
         $comment = Comment::where('product_id', $product->id)->orderBy('created_at','desc')->get();
