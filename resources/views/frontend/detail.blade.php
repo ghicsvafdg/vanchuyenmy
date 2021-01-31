@@ -282,13 +282,15 @@
                                     </div>
                                     {{-- banner 4 --}}
                                     <div class="px-0 col-lg-4 d-none d-lg-block">
-                                        @foreach ($banner as $bn)
-                                        @if ($bn->section == 4)
-                                            <a href="{{$bn->web_link}}">
-                                                <img class="img-fluid" src="{{asset('banner/'.$bn->filename)}}" style="padding-right: 10px;" alt="Banner khu vực 4">
-                                            </a>
+                                        @if($banner != null)
+                                            @foreach ($banner as $bn)
+                                            @if ($bn->section == 4)
+                                                <a href="{{$bn->web_link}}">
+                                                    <img class="img-fluid" src="{{asset('banner/'.$bn->filename)}}" style="padding-right: 10px;" alt="Banner khu vực 4">
+                                                </a>
+                                            @endif
+                                            @endforeach
                                         @endif
-                                        @endforeach     
                                     </div>
                                     {{-- end banner 4 --}}
                                 </div>
@@ -329,13 +331,15 @@
                                 </div>
                             </div>
                             <div class="col-lg-3 d-none d-lg-block">
-                                @foreach ($banner as $bn)
+                                @if($banner != null)
+                                    @foreach ($banner as $bn)
                                     @if ($bn->section == 5)
                                         <a href="{{$bn->web_link}}">
                                             <img class="img-fluid" src="{{asset('banner/'.$bn->filename)}}"  alt="Banner khu vực 5" height="445" width="220">
                                         </a>
                                     @endif
                                 @endforeach                                               
+                                @endif
                             </div>
                         </div>
                     </div>

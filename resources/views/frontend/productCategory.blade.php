@@ -37,23 +37,25 @@
         <div class="row pl-3 pb-4">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
                 <div class="carousel-inner">
-                    @foreach ($banner as $bn)
-                        @if ($bn->section == 6)
-                            <?php $array[] = $bn; ?>
-                        @endif
-                    @endforeach
-                    <div class="carousel-item active">
-                        <a href="{{$array[0]->web_link}}">
-                            <img src="{{asset('banner/'.$array[0]->filename)}}" class="img-fluid" alt="banner khu vực 6">
-                        </a>
-                    </div>
-                    @for ($i = 1; $i < count($array); $i++)
+                    @if($banner != null)
+                        @foreach ($banner as $bn)
+                            @if ($bn->section == 6)
+                                <?php $array[] = $bn; ?>
+                            @endif
+                        @endforeach
+                        <div class="carousel-item active">
+                            <a href="{{$array[0]->web_link}}">
+                                <img src="{{asset('banner/'.$array[0]->filename)}}" class="img-fluid" alt="banner khu vực 6">
+                            </a>
+                        </div>
+                        @for ($i = 1; $i < count($array); $i++)
                         <div class="carousel-item">
                             <a href="{{$array[$i]->web_link}}">
                                 <img src="{{asset('banner/'.$array[$i]->filename)}}" class="img-fluid" alt="banner khu vực 6">
                             </a>
                         </div>
                     @endfor
+                    @endif
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
