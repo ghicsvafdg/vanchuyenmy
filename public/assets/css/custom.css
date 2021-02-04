@@ -247,7 +247,6 @@ body, h1, h2, h3, h4, h5, h6, p{
 .btn-search{
    border: 1px solid transparent;
    margin: 0;
-   background-color: transparent;
    padding: 6px 14px;
    cursor: pointer;
    margin-top: 10px;
@@ -420,12 +419,8 @@ body, h1, h2, h3, h4, h5, h6, p{
 @media (max-width : 1300px) {
 
    .navbar-expand-lg .navbar-nav .dropdown-menu{
-      
-      position: absolute !important;
-   }
-
-   .navbar-expand-lg .navbar-nav .dropdown-menu{
       left: -54px !important;
+      position: absolute !important;
    }
    
    #alert_demo_1{
@@ -479,10 +474,7 @@ body, h1, h2, h3, h4, h5, h6, p{
    z-index: 1000;
    cursor: pointer;
 }
-*{
-   margin: 0;
-   padding: 0;
-}
+
 .rate {
    float: left;
    height: 46px;
@@ -774,7 +766,6 @@ width: 100%;
 .dropdown:hover .dropdown-main-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {}
 .dropbtn {
    border: 1px solid white !important;
    border-radius: 5px;
@@ -783,7 +774,6 @@ width: 100%;
    padding-bottom: 10px;
    padding-right: 30px;
    width: 134px;
-   border: none;
    cursor: pointer;
    font-size: 15px;
    background-color:#ffcc33 ;
@@ -836,7 +826,7 @@ width: 100%;
    margin-bottom: 0px;
 }
 .infor-checkout p{
-   font-size: 12px;;
+   font-size: 12px;
    margin-bottom: 5px;
 }
 #main-category{
@@ -1065,7 +1055,7 @@ img {
    margin-left: 164px;
 }
 .w3-display-right{
-   margin-left: 107%;;
+   margin-left: 107%;
 }
 
 .room-preview img:hover{
@@ -1319,9 +1309,6 @@ img {
    display: block;
    top: 45%;
    z-index: 999;
-   position: absolute;
-   
-   
 }
 
 
@@ -1331,7 +1318,6 @@ img {
    display: block;
    top: 45%;
    z-index: 999;
-   
 }
 #bar-report-price{
    background: #EDE574;  /* fallback for old browsers */
@@ -1366,7 +1352,6 @@ img {
    cursor: pointer;
    padding: 10px;
    width: 100%;
-   border: none;
    text-align: left;
    outline: none;
    font-size: 15px;
@@ -1378,12 +1363,9 @@ img {
    background-color: #555;
 }
 
-.content {
-   
-   
+.content {  
    overflow: hidden;
    color: #000;
-   
    border: 1px solid rgb(223, 220, 220);
    border-radius: 3px;
 }
@@ -1399,7 +1381,6 @@ img {
    top: 10px;
    height: 30px;
    width: 30px;
-   border: 0;
    border-radius: 50px;
    cursor: pointer;     
    margin-right: 7px;
@@ -1433,7 +1414,6 @@ img {
    top: 10px;
    height: 30px;
    width: 30px;
-   border: 0;
    border-radius: 50px;
    cursor: pointer;     
    margin-right: 7px;
@@ -1723,10 +1703,6 @@ img.room-active {
    margin-bottom: 0px;
 }
 
-#v-pills-home-tab-icons:hover::after{
-   
-   
-}
 .unchecked{
    color: #000;
 }
@@ -1738,7 +1714,6 @@ img.room-active {
    overflow: auto;
    white-space: nowrap;
    flex-wrap: nowrap;
-   
 }
 
 .nav li li {
@@ -1967,16 +1942,20 @@ img.room-active {
 #box-shipping h5{
    padding-bottom: 20px;
 }
-.active, .collapsible:hover {
+.active:hover {
+   background-color: white;
+} 
+
+.collapsible:hover {
    background-color: white;
 }
+
 #Step img{
    position: absolute;
    z-index: 1;
    height: 86%;
    margin-top: 5px;
    margin-left: 32px;
-   
 }
 #Step h5{
    position: absolute;
@@ -1984,13 +1963,8 @@ img.room-active {
    padding-top: 15px;
    padding-left: 58px;
 }
-#Step{
-   
-   
-   
+#Step{ 
    color: white;
-   
-   
 }
 
 .nav-pills.flex-column .nav-link:hover{
@@ -2186,7 +2160,6 @@ img.room-active {
 #alert_demo_1{
    background-color: #fdedc4 !important;
    color: #e13475;
-   border:none;
    border-radius: 5px;
    cursor: pointer;
    border: 1px solid #e13475 !important;
@@ -2225,7 +2198,6 @@ img.room-active {
 */
 .radio-toolbar label {
    display: inline-block;
-   background-color: #ddd;
    padding: .4rem 1.7rem;
    background-color: white;
    cursor: pointer;
@@ -2558,10 +2530,9 @@ img.room-active {
    opacity: 0.8;
 }
 .btn-gradient16{
-   
    padding: 10px 5px ;
    border: none;
-   border: 1px solid  #fe8c00; ;
+   border: 1px solid  #fe8c00; 
    border-radius: 30px;
    cursor: pointer;
    width: 200px;
@@ -2572,7 +2543,7 @@ img.room-active {
 .btn-gradient23{
    padding: 10px 15px ;
    border: none;
-   border: 1px solid  #fe8c00; ;
+   border: 1px solid  #fe8c00; 
    border-radius: 30px;
    cursor: pointer;
    width: 200px;
@@ -2598,7 +2569,7 @@ img.room-active {
    background: linear-gradient(to right, #f83600, #fe8c00);
    padding: 10px 5px ;
    border: none;
-   border: 1px solid  #fe8c00; ;
+   border: 1px solid  #fe8c00; 
    border-radius: 30px;
    cursor: pointer;
    width: 200px;
@@ -2685,8 +2656,8 @@ img.room-active {
 #navbar a {
    display: block;
    text-align: left;
-   
 }
+
 #navbar-rights {
    float: none;
 }

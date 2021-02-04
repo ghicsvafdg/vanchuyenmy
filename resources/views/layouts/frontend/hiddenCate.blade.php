@@ -1,7 +1,7 @@
 <div class="px-1 col-md-3 d-none d-lg-block">   
     <div class="list-group" id="list-tab" role="tablist">
         
-        @foreach ($categories as $item)
+        <!-- @foreach ($categories as $item) -->
         <div class="mega-menu">
             <div class="dropdown-hover"> 
                 @if ($item->parent_id == 0)
