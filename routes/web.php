@@ -63,10 +63,14 @@ Route::resources([
 
 
 //frontend
-// Route::get('search-product', 'Frontend\ProductController@search')->name('search_product');
 Route::get('','Frontend\HomeController@index')->name('index');
-Route::resource('index','Frontend\HomeController');
-Route::resource('danh-muc','Frontend\ProductCategoryController');
+Route::get('index','Frontend\HomeController@index');
+Route::get('search', 'Frontend\HomeController@search')->name('search-product');
+Route::post('filter-search', 'Frontend\HomeController@filterSearch')->name('filter-search');
+
+Route::get('danh-muc/{id}','Frontend\ProductCategoryController@show')->name('danh-muc');
+Route::get('filter-product-cate/{id}', 'Frontend\ProductCategoryController@filter')->name('filter-product-cate');
+
 Route::resource('post','Frontend\PostController');
 Route::resource('san-pham','Frontend\ProductController');
 Route::resource('cart','Backend\CartController');
@@ -86,9 +90,6 @@ Route::get('tao-dia-chi','Backend\AddressController@createAddress');
 Route::post('save-address','Backend\AddressController@storeAddressOnly');
 
 Route::get('filter-order', 'Frontend\OrderController@filter')->name('filter-order');
-Route::get('filter-product-cate/{id}', 'Frontend\ProductCategoryController@filter')->name('filter-product-cate');
-Route::get('search', 'Frontend\HomeController@search')->name('search-product');
-Route::post('filter-search', 'Frontend\HomeController@filterSearch')->name('filter-search');
 
 //comments for post
 Route::post('comments', 'Frontend\CommentController@store')->name('comment');

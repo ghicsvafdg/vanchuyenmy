@@ -14,11 +14,6 @@ use App\Models\Tag;
 
 class ProductCategoryController extends Controller
 {
-    public function index()
-    {
-        abort(404);
-    }
-
     /**
      * Display the specified resource.
      *
@@ -131,15 +126,5 @@ class ProductCategoryController extends Controller
             return view('frontend.productCategory', compact('tags','tgs','categories','banner','product','category','cartlist','cart','footerPost', 'newest'));
         }
         return view ('frontend.productCategory',compact('tags','tgs','categories','banner','product','category','footerPost',  'newest'));
-    }
-
-    public function create()
-    {
-        abort(404);
-    }
-
-    public function edit($id)
-    {
-        abort(404);
     }
 }

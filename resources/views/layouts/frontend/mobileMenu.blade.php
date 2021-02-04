@@ -11,9 +11,9 @@
                             {{$parentCate->title}}
                         </button>
                         <div id="collapse{{$parentCate->id}}" class="collapse fixformText" aria-labelledby="headingOne" data-parent="#accordionExample">
-                            <a style="color: #007bff;" href="{{route('danh-muc.show',$parentCate->slug)}}"><b>{{$parentCate->title}}</b></a>
+                            <a style="color: #007bff;" href="{{route('danh-muc',$parentCate->slug)}}"><b>{{$parentCate->title}}</b></a>
                             @foreach (App\Models\ProductCategory::where([['parent_id',$parentCate->id],['status',1]])->get() as $childCate)
-                            <a href="{{route('danh-muc.show',$childCate->slug)}}">{{$childCate->title}}</a>
+                            <a href="{{route('danh-muc',$childCate->slug)}}">{{$childCate->title}}</a>
                             @endforeach
                         </div>
                     </div>

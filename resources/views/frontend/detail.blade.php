@@ -16,7 +16,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('danh-muc.show',$product->productCategory->slug)}}">{{$product->productCategory->title}}</a>
+                        <a href="{{route('danh-muc',$product->productCategory->slug)}}">{{$product->productCategory->title}}</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
@@ -33,13 +33,13 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('danh-muc.show',$cate->slug)}}">{{$cate->title}}</a>
+                        <a href="{{route('danh-muc',$cate->slug)}}">{{$cate->title}}</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('danh-muc.show',$product->productCategory->slug)}}">{{$product->productCategory->title}}</a>
+                        <a href="{{route('danh-muc',$product->productCategory->slug)}}">{{$product->productCategory->title}}</a>
                     </li>
                     @endif
                     @endforeach

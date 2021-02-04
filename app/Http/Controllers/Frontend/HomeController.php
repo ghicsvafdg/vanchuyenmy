@@ -108,7 +108,6 @@ class HomeController extends Controller
         return view('frontend.search', compact('price','range','search','tags','tgs','categories','product','banner','posts','footerPost','hotProducts'));
     }
     
-    
     public function filterSearch(Request $request){
         $search = $request->get('search');
         $slugs = HomeController::convert_vi_to_en($request->get('search'));

@@ -57,7 +57,7 @@
                     <div class="dropdown-content5">
                         @foreach ($categories as $category)
                         <div class="column-cate">
-                            <a href="{{route('danh-muc.show',$category->slug)}}"><i class="{{$category->icon}}" style="color: #f09819; margin-right: 15px; margin-top: 2px; font-size: 20px;"></i>{{$category->title}}</a>    
+                            <a href="{{route('danh-muc',$category->slug)}}"><i class="{{$category->icon}}" style="color: #f09819; margin-right: 15px; margin-top: 2px; font-size: 20px;"></i>{{$category->title}}</a>
                         </div>
                         @endforeach
                     </div>

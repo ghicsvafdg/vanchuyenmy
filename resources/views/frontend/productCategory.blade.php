@@ -3,8 +3,7 @@
 <div class="py-4 container">
     <div class="page-header">
         <!-- breadcum -->
-        <div class="row"> 
-            
+        <div class="row">
             <ul class="breadcrumbs">
                 <li class="nav-home">
                     <a href="#">
@@ -16,17 +15,17 @@
                 </li>
                 @if ($category->parent_id == 0)
                 <li class="nav-item">
-                    <a href="{{route('danh-muc.show',$category->slug)}}">{{$category->title}}</a>
+                    <a href="{{route('danh-muc',$category->slug)}}">{{$category->title}}</a>
                 </li>
                 @else
                 <li class="nav-item">
-                    <a href="{{route('danh-muc.show',App\Models\ProductCategory::where([['id',$category->parent_id],['status',1]])->first()->slug)}}">{{App\Models\ProductCategory::where([['id',$category->parent_id],['status',1]])->first()->title}}</a>
+                    <a href="{{route('danh-muc',App\Models\ProductCategory::where([['id',$category->parent_id],['status',1]])->first()->slug)}}">{{App\Models\ProductCategory::where([['id',$category->parent_id],['status',1]])->first()->title}}</a>
                 </li>
                 <li class="separator">
                     <i class="flaticon-right-arrow"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('danh-muc.show',$category->slug)}}">{{$category->title}}</a>
+                    <a href="{{route('danh-muc',$category->slug)}}">{{$category->title}}</a>
                 </li>
                 @endif
             </ul>
