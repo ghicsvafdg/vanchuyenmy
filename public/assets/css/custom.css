@@ -1179,6 +1179,10 @@ img {
    padding: 5px;
    padding-left: 20px;
 }
+
+.banner-voucher img {
+   width: 1150px;
+}
 #warning3{
    background-color: #fffeee;
    border: 1px solid #ffcd87;

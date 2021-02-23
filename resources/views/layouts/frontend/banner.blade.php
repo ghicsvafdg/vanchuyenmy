@@ -1,6 +1,6 @@
 <div class="col">
     <div class="row">
-        <div class="col-md-8 px-0">
+        <div class="col-md-11 px-0">
             
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -62,4 +62,7 @@
             @endforeach
         @endif
     </div>
+</div>
+<div class="banner-voucher pl-1 pt-3">
+    <img src="assets/img/banner2.jpg" class="img-fluid" alt="banner voucher">
 </div>
