@@ -37,23 +37,26 @@
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
                 <div class="carousel-inner">
                     @if(!$banner->isEmpty())
+                        <?php $array = []; ?>
                         @foreach ($banner as $bn)
                             @if ($bn->section == 6)
                                 <?php $array[] = $bn; ?>
                             @endif
                         @endforeach
-                        <div class="carousel-item active">
-                            <a href="{{$array[0]->web_link}}">
-                                <img src="{{asset('banner/'.$array[0]->filename)}}" class="img-fluid" alt="banner khu vực 6">
-                            </a>
-                        </div>
-                        @for ($i = 1; $i < count($array); $i++)
-                        <div class="carousel-item">
-                            <a href="{{$array[$i]->web_link}}">
-                                <img src="{{asset('banner/'.$array[$i]->filename)}}" class="img-fluid" alt="banner khu vực 6">
-                            </a>
-                        </div>
-                    @endfor
+                        @if (!empty($array))
+                            <div class="carousel-item active">
+                                <a href="{{$array[0]->web_link}}">
+                                    <img src="{{asset('banner/'.$array[0]->filename)}}" class="img-fluid" alt="banner khu vực 6">
+                                </a>
+                            </div>
+                            @for ($i = 1; $i < count($array); $i++)
+                                <div class="carousel-item">
+                                    <a href="{{$array[$i]->web_link}}">
+                                        <img src="{{asset('banner/'.$array[$i]->filename)}}" class="img-fluid" alt="banner khu vực 6">
+                                    </a>
+                                </div>
+                            @endfor
+                        @endif
                     @endif
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

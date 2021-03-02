@@ -52,7 +52,7 @@ class ProductCategoryController extends Controller
         $parent = $request->get('parent_id');
 
         $request->validate([
-            'title' => 'required|unique:product_categories|regex:/^[A-Za-z0-9 ]+$/',
+            'title' => 'required|unique:product_categories|regex:/[A-Za-z0-9]+/',
         ]);
         $title = $request->get('title');
 
