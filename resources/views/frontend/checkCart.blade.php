@@ -134,7 +134,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style=""><img class="img-fluid" style="width: 45px;" src="{{asset('images/'.json_decode($detail->productOrder->filename)[0])}}" alt="Chania"></td>
+                                    <td style=""><img class="img-fluid lazyload" style="width: 45px;" src="{{asset('images/'.json_decode($detail->productOrder->filename)[0])}}" alt="Chania"></td>
                                     <td>
                                         <div class="" id="final-price">
                                             <p id="p1">{{number_format( $detail->productOrder->promotion, 0, ',', ' ' )}}.000 đ</p> 

@@ -15,7 +15,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="{{route('san-pham.show',$ct->proInCart->slug)}}"><img class="img-fluid" style="width: 45px;" src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" alt="Chania"></a></td>
+                                <td><a href="{{route('san-pham.show',$ct->proInCart->slug)}}"><img class="img-fluid lazyload" style="width: 45px;" src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" alt="Chania"></a></td>
                                 <td>
                                     <div class="" id="final-price">
                                         @if ($ct->proInCart->promotion)

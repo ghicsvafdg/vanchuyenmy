@@ -22,7 +22,7 @@
                                 @foreach ($product as $pro)
                                 <div class="px-2 col-lg-3" >
                                     <div class="card-product">  
-                                        <a href="{{route('san-pham.show',$pro->getProduct->slug)}}"> <img class="img-fluid" style="height: 210px;" src="{{asset('images/'.json_decode($pro->getProduct->filename)[0])}}" alt="Chania"></a>
+                                        <a href="{{route('san-pham.show',$pro->getProduct->slug)}}"> <img class="img-fluid lazyload" style="height: 210px;" src="{{asset('images/'.json_decode($pro->getProduct->filename)[0])}}" alt="Chania"></a>
                                         <div class="col">
                                             <div class="pt-3 title-card" style="height: 55px;">
                                                 <a class="card-title" style="height: 50px;"  href="{{route('san-pham.show',$pro->getProduct->slug)}}">
@@ -114,7 +114,7 @@
                                     <div class="item" id="title-post">
                                         <div class="img-blog">
                                             <a href="{{route('post.show',$post->getPost->slug)}}">
-                                                <img src="{{asset('images/'.$post->getPost->filename)}}" style="height: 280px;" class="img-fluid pb-3" alt="...">
+                                                <img src="{{asset('images/'.$post->getPost->filename)}}" style="height: 280px;" class="img-fluid pb-3 lazyload" alt="...">
                                             </a>
                                         </div>
                                         <div class="col pt-2">

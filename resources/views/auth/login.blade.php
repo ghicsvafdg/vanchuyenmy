@@ -31,7 +31,7 @@
             <div class="row" id="header-login">
                 <div>
                     <a class="navbar-brand" id="logo-login" href="{{route('index')}}">
-                        <img src="{{asset('assets/img/final-logo.png')}}" class="img-fluid" alt="..." style="width: 250px; height: 60px;">
+                        <img src="{{asset('assets/img/final-logo.png')}}" class="img-fluid lazyload" alt="..." style="width: 250px; height: 60px;">
                     </a>
                 </div>
                 <div class="register-btn d-lg-block d-none">
@@ -127,7 +127,7 @@
                     
                 </div>
                 <div class="col-6 px-0 d-lg-block d-none">
-                    <img src="{{asset('assets/img/background-login.jpg')}}"  class="img-fluid" alt="..." style="height: 670px;" >
+                    <img src="{{asset('assets/img/background-login.jpg')}}"  class="img-fluid lazyload" alt="..." style="height: 670px;" >
                 </div>
             </div>
         </div>

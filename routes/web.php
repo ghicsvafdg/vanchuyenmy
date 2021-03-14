@@ -65,6 +65,7 @@ Route::resources([
 //frontend
 Route::get('','Frontend\HomeController@index')->name('index');
 Route::get('index','Frontend\HomeController@index');
+
 Route::get('search', 'Frontend\HomeController@search')->name('search-product');
 Route::post('filter-search', 'Frontend\HomeController@filterSearch')->name('filter-search');
 
@@ -82,6 +83,7 @@ Route::resource('code','Frontend\CodeController');
 Route::resource('manage-address','Frontend\AddressController');
 Route::resource('footer-post','Frontend\FooterPostController');
 Route::resource('tag','Frontend\TagController');
+
 //quotation 
 Route::resource('yeu-cau-bao-gia','Frontend\QuotationController');
 
@@ -106,8 +108,6 @@ Route::post('saving-order','Backend\AddressController@save');
 Route::get('thanh-toan','Backend\AddressController@index');
 Route::get('get-district-list','Backend\AddressController@getDistrictList');
 Route::get('get-ward-list','Backend\AddressController@getWardList');
-
-
 
 //change user password by themselve
 Route::post('update-password','Frontend\UserController@updatePassword')->name('update-password');

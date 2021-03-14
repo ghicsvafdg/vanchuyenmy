@@ -10,7 +10,7 @@
     <div class="item">
         <div class="card-product">   
             <a href="{{route('san-pham.show',App\Models\Product::findOrFail($product->products_id)->slug)}}">
-                <img class="img-fluid" style="height: 200px;" src="{{asset('images/'.json_decode(App\Models\Product::findOrFail($product->products_id)->filename)[0])}}" alt="Chania">
+                <img class="img-fluid lazyload" style="height: 200px;" src="{{asset('images/'.json_decode(App\Models\Product::findOrFail($product->products_id)->filename)[0])}}" alt="Chania">
             </a>
             <div class="col">
                 <div class="pt-3 title-card" style="height: 55px;">

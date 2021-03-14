@@ -31,7 +31,7 @@
             <div class="row" id="header-login">
                 <div class="">
                     <a class="navbar-brand" id="logo-login" href="{{route('index')}}">
-                        <img src="{{asset('assets/img/final-logo.png')}}" class="img-fluid" alt="..." style="width: 250px; height: 60px; ">
+                        <img src="{{asset('assets/img/final-logo.png')}}" class="img-fluid lazyload" alt="..." style="width: 250px; height: 60px; ">
                     </a>
                 </div>
                 <div class="register-btn">

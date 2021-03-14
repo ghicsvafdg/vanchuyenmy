@@ -245,7 +245,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="py-5 col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                <img src="assets/img/store.jpg" alt="" style="width:150px; height:150px; padding-bottom: 20px;">
+                                <img src="assets/img/store.jpg" class="lazyload" alt="" style="width:150px; height:150px; padding-bottom: 20px;">
                                 <div class="col">
                                     <button type="button" class="btn btn-warning">TÌM CỬA HÀNG</button>
                                 </div>

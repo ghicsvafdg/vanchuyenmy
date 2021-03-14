@@ -28,7 +28,7 @@
                         </div>
                         <div class="row pr-4">
                             <div class="pr-0 col-3 col-lg-2" id="Step">
-                                <img src="{{asset('assets/img/arrow.png')}}"  class="img-fluid" alt="...">
+                                <img src="{{asset('assets/img/arrow.png')}}"  class="img-fluid lazyload" alt="...">
                                 <h5>Bước 1</h5>
                             </div>
                             <div class="pl-5 mt-1 col-7 col-lg-8" style=" padding: 10px; background-color: #fffab4">
@@ -83,7 +83,7 @@
                         <br>
                         <div class="pb-3 row pr-4" style="" >
                             <div class="pr-0 col-3 col-lg-2" id="Step">
-                                <img src="assets/img/arrow.png"  class="img-fluid" alt="...">
+                                <img src="assets/img/arrow.png"  class="img-fluid lazyload" alt="...">
                                 <h5>Bước 2</h5>
                             </div>
                             <div class="pl-5 mt-1 col-9 col-lg-10" style="padding: 10px; background-color: #fffab4">
@@ -135,7 +135,7 @@
                     </div>
                     <div class="row pr-4">
                         <div class="pr-0 col-3 col-lg-2" id="Step" >
-                            <img src="{{asset('assets/img/arrow.png')}}"  class="img-fluid" alt="...">
+                            <img src="{{asset('assets/img/arrow.png')}}"  class="img-fluid lazyload" alt="...">
                             <h5>Bước 1</h5>
                         </div>
                         <div class="pl-5 mt-1 col-7 col-lg-8" style="padding: 10px; background-color: #fffab4">
@@ -312,7 +312,7 @@
                     <br>
                     <div class="pb-3 row pr-4">
                         <div class="pr-0 col-3 col-lg-2" id="Step">
-                            <img src="assets/img/arrow.png"  class="img-fluid" alt="...">
+                            <img src="assets/img/arrow.png" class="img-fluid lazyload" alt="...">
                             <h5>Bước 2</h5>
                         </div>
                         <div class="pl-5 mt-1 col-9 col-lg-10" style="padding: 10px; background-color: #fffab4">

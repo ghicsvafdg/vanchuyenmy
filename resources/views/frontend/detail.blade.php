@@ -77,7 +77,7 @@
                                     <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
                                         <div class="box-img">
                                             <a href="{{asset('images/'.$image)}}">
-                                                <img src="{{asset('images/'.$image)}}" class="img-fluid" alt=""/>
+                                                <img src="{{asset('images/'.$image)}}" class="img-fluid lazyload" alt=""/>
                                             </a>
                                         </div>
                                     </div>
@@ -89,13 +89,13 @@
                                 <div class="pt-3 owl-carousel owl-theme" id='carousel_horizontal1'> 
                                     <div class="item" id="product">
                                         <div class="box-img-cursor">
-                                            <img class="demo img-fluid" id="cursor-img" src="{{asset('images/play.png')}}" onclick="currentSlide(1)" alt="The Woods">
+                                            <img class="demo img-fluid lazyload" id="cursor-img" src="{{asset('images/play.png')}}" onclick="currentSlide(1)" alt="The Woods">
                                         </div>
                                     </div>
                                     @foreach ($images as $img)
                                     <div class="item" id="product">
                                         <div class="box-img-cursor">
-                                            <img class="demo img-fluid" id="cursor-img" src="{{asset('images/'.$img)}}" onclick="currentSlide({{$i++}})" alt="The Woods">
+                                            <img class="demo img-fluid lazyload" id="cursor-img" src="{{asset('images/'.$img)}}" onclick="currentSlide({{$i++}})" alt="The Woods">
                                         </div>
                                     </div>
                                     @endforeach          
@@ -108,7 +108,7 @@
                                     <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
                                         <div class="box-img">
                                             <a href="{{asset('images/'.$image)}}">
-                                                <img src="{{asset('images/'.$image)}}" class="img-fluid" alt=""/>
+                                                <img src="{{asset('images/'.$image)}}" class="img-fluid lazyload" alt=""/>
                                             </a>
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@
                                     @foreach ($images as $img)
                                     <div class="item" id="product">
                                         <div class="box-img-cursor">
-                                            <img class="demo img-fluid" id="cursor-img" src="{{asset('images/'.$img)}}" onclick="currentSlide({{$z++}})" alt="The Woods">
+                                            <img class="demo img-fluid lazyload" id="cursor-img" src="{{asset('images/'.$img)}}" onclick="currentSlide({{$z++}})" alt="The Woods">
                                         </div>
                                     </div>
                                     @endforeach          
@@ -205,7 +205,7 @@
                                         <div class="shiping-free">
                                             @foreach ($footerPost as $post)
                                             @if ($post->category == 6)
-                                            <img class="img-fluid" src="{{asset('images/'.$post->filename)}}" alt="Chania" > 
+                                            <img class="img-fluid lazyload" src="{{asset('images/'.$post->filename)}}" alt="Chania" >
                                             <h5>{!!$post->content!!}</h5>
                                             @endif
                                             @endforeach
@@ -286,7 +286,7 @@
                                             @foreach ($banner as $bn)
                                             @if ($bn->section == 4)
                                                 <a href="{{$bn->web_link}}">
-                                                    <img class="img-fluid" src="{{asset('banner/'.$bn->filename)}}" style="padding-right: 10px;" alt="Banner khu vực 4">
+                                                    <img class="img-fluid lazyload" src="{{asset('banner/'.$bn->filename)}}" style="padding-right: 10px;" alt="Banner khu vực 4">
                                                 </a>
                                             @endif
                                             @endforeach
@@ -335,7 +335,7 @@
                                     @foreach ($banner as $bn)
                                     @if ($bn->section == 5)
                                         <a href="{{$bn->web_link}}">
-                                            <img class="img-fluid" src="{{asset('banner/'.$bn->filename)}}"  alt="Banner khu vực 5" height="445" width="220">
+                                            <img class="img-fluid lazyload" src="{{asset('banner/'.$bn->filename)}}"  alt="Banner khu vực 5" height="445" width="220">
                                         </a>
                                     @endif
                                 @endforeach                                               
@@ -460,10 +460,10 @@
                                                     <div class="avatar">
                                                         @if ($comment->users->avatar)
                                                         <object data="{{asset('profile/'.$comment->users->avatar)}}" class="avatar-img rounded-circle" type="image/png">
-                                                            <img src="{{$comment->users->avatar}}" alt="image profile" class="avatar-img rounded-circle">
+                                                            <img src="{{$comment->users->avatar}}" alt="image profile lazyload" class="avatar-img rounded-circle">
                                                         </object>
                                                         @else
-                                                        <img src="{{asset('profile/default_av.png')}}" alt="image profile" class="avatar-img rounded-circle">
+                                                        <img src="{{asset('profile/default_av.png')}}" alt="image profile lazyload" class="avatar-img rounded-circle">
                                                         @endif
                                                     </div>
                                                 </div>
@@ -561,7 +561,7 @@
                     <div class="item" id="shadow-card">
                         <div class="card">  
                             <a href="{{route('san-pham.show',$relateProduct->slug)}}">
-                                <img class="img-fluid" style="height: 210px;" src="{{asset('images/'.json_decode($relateProduct->filename)[0])}}" alt="Chania">
+                                <img class="img-fluid lazyload" style="height: 210px;" src="{{asset('images/'.json_decode($relateProduct->filename)[0])}}" alt="Chania">
                             </a>
                             <div class="px-2">
                                 <div class="pt-3 title-card" style="height: 55px;">
@@ -639,7 +639,7 @@
                     <div class="item" id="shadow-card">
                         <div class="card">  
                             <a href="{{route('san-pham.show',$productViewed->viewedProduct->slug)}}">
-                                <img class="img-fluid" style="height: 210px;" src="{{asset('images/'.json_decode($productViewed->viewedProduct->filename)[0])}}" alt="Chania">
+                                <img class="img-fluid lazyload" style="height: 210px;" src="{{asset('images/'.json_decode($productViewed->viewedProduct->filename)[0])}}" alt="Chania">
                             </a>
                             <div class="px-2">
                                 <div class="pt-3 title-card" style="height: 55px;">

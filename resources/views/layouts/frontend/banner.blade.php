@@ -1,7 +1,6 @@
 <div class="col">
     <div class="row">
         <div class="col-md-11 px-0">
-            
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     @if(!$banner->isEmpty())
@@ -12,13 +11,13 @@
                         @endforeach
                         <div class="carousel-item active">
                             <a href="{{$array[0]->web_link}}">
-                                <img src="{{asset('banner/'.$array[0]->filename)}}" class="img-fluid" alt="banner khu vực 1">
+                                <img src="{{asset('banner/'.$array[0]->filename)}}" class="img-fluid lazyload" alt="banner khu vực 1">
                             </a>
                         </div>
                         @for ($i = 1; $i < count($array); $i++)
                             <div class="carousel-item">
-                                <a href="{{$array[$i]->web_link}}">
-                                    <img src="{{asset('banner/'.$array[$i]->filename)}}" class="img-fluid" alt="banner khu vực 1">
+                                <a href="{{$array[$]->web_link}}">
+                                    <img src="{i{asset('banner/'.$array[$i]->filename)}}" class="img-fluid lazyload" alt="banner khu vực 1">
                                 </a>
                             </div>
                         @endfor
@@ -33,36 +32,17 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            
         </div>
-        <div class="pl-lg-0 col-12 col-md-4 col-lg-4">
-            <div class="row">
-                @if(!$banner->isEmpty())
-                    @foreach ($banner as $bn)
-                        @if ($bn->section == 2)
-                            <div class="px-0 col-6">
-                                <a href="{{$bn->web_link}}">
-                                    <img src="{{asset('banner/'.$bn->filename)}}" class="img-fluid" alt="banner khu vực 2" >
-                                </a>
-                            </div>
-                        @endif
-                    @endforeach
-                @endif
-            </div>
-        </div>
-    </div>
-    <div class="pl-0 d-none d-lg-block row">
-        @if(!$banner->isEmpty())
-            @foreach ($banner as $bn)
-            @if ($bn->section == 3)
-                <a href="{{$bn->web_link}}">
-                    <img src="{{asset('banner/'.$bn->filename)}}" class="img-fluid" alt="banner khu vực 3">
-                </a>
-            @endif
-            @endforeach
-        @endif
     </div>
 </div>
 <div class="banner-voucher pl-1 pt-3">
-    <img src="assets/img/banner2.jpg" class="img-fluid" alt="banner voucher">
+    @if(!$banner->isEmpty())
+        @foreach ($banner as $bn)
+            @if ($bn->section == 2)
+                <a href="{{$bn->web_link}}">
+                    <img src="{{asset('banner/'.$bn->filename)}}" class="img-fluid lazyload" alt="banner khu vực 2">
+                </a>
+            @endif
+        @endforeach
+    @endif
 </div>

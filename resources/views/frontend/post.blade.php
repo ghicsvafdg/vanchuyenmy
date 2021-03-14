@@ -3,7 +3,7 @@
         <div class="item" id="title-post">
             <div class="img-blog">
                 <a href="{{route('post.show',$post->slug)}}">
-                    <img src="{{asset('images/'.$post->filename)}}" style="height: 280px;" class="img-fluid pb-3" alt="...">
+                    <img src="{{asset('images/'.$post->filename)}}" style="height: 280px;" class="img-fluid pb-3 lazyload" alt="...">
                 </a>
             </div>
             <div class="col pt-2">

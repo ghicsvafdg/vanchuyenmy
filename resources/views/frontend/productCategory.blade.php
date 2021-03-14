@@ -46,13 +46,13 @@
                         @if (!empty($array))
                             <div class="carousel-item active">
                                 <a href="{{$array[0]->web_link}}">
-                                    <img src="{{asset('banner/'.$array[0]->filename)}}" class="img-fluid" alt="banner khu vực 6">
+                                    <img src="{{asset('banner/'.$array[0]->filename)}}" class="img-fluid lazyload" alt="banner khu vực 6">
                                 </a>
                             </div>
                             @for ($i = 1; $i < count($array); $i++)
                                 <div class="carousel-item">
                                     <a href="{{$array[$i]->web_link}}">
-                                        <img src="{{asset('banner/'.$array[$i]->filename)}}" class="img-fluid" alt="banner khu vực 6">
+                                        <img src="{{asset('banner/'.$array[$i]->filename)}}" class="img-fluid lazyload" alt="banner khu vực 6">
                                     </a>
                                 </div>
                             @endfor
@@ -122,7 +122,7 @@
                                     <div class="px-2 col-lg-3 col-6">
                                         <div class="card-product">  
                                             <a href="{{route('san-pham.show',$pro->slug)}}">
-                                                <img class="img-fluid" style="height: 210px;" src="{{asset('images/'.json_decode($pro->filename)[0])}}" alt="Chania">
+                                                <img class="img-fluid lazyload" style="height: 210px;" src="{{asset('images/'.json_decode($pro->filename)[0])}}" alt="Chania">
                                             </a>
                                             <div class="col">
                                                 <div class="pt-3" id="title-card">
@@ -218,7 +218,7 @@
                                     <div class="px-2 col-lg-3 col-6">
                                         <div class="card-product">  
                                             <a href="{{route('san-pham.show',$pro->slug)}}">
-                                                <img class="img-fluid" style="height: 210px;" src="{{asset('images/'.json_decode($pro->filename)[0])}}" alt="Chania">
+                                                <img class="img-fluid lazyload" style="height: 210px;" src="{{asset('images/'.json_decode($pro->filename)[0])}}" alt="Chania">
                                             </a>
                                             <div class="col">
                                                 <div class="pt-3" id="title-card">

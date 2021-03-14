@@ -5,7 +5,7 @@
             <div class="card-category">
                 <div class="card-image">
                     <a href="{{route('danh-muc',$item->slug)}}">
-                        <img src="{{asset('images/'.$item->filename)}}" class="img-fluid" alt="..." style="border-radius: 5px; width: 70px; height: 70px;">
+                        <img src="{{asset('images/'.$item->filename)}}" class="img-fluid lazyload" alt="..." style="border-radius: 5px; width: 70px; height: 70px;">
                     </a> 
                 </div>
                 <div class="card-text">   

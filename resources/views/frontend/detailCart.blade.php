@@ -43,7 +43,7 @@
                         @foreach ($cart as $ct)
                         <tr class="text-center">
                             <th scope="row">
-                                <img src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" class="img-fluid" alt="..." width="60px" height="60px;">
+                                <img src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" class="img-fluid lazyload" alt="..." width="60px" height="60px;">
                             </th>
                             <td class="text-left" width="30%"> 
                                 <a href="{{route('san-pham.show',$ct->proInCart->slug)}}"><p>{{$ct->proInCart->name}}</p></a>
@@ -101,7 +101,7 @@
                                                 <a href="{{route('san-pham.show',$ct->proInCart->slug)}}"><img class="img-fluid" style="width: 45px;" src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" alt="Chania"></a>
                                             </div>
                                             <div class="col-10">
-                                                <a href="{{route('san-pham.show',$ct->proInCart->slug)}}">{{$ct->proInCart->name}}</a></th>
+                                                <a href="{{route('san-pham.show',$ct->proInCart->slug)}}">{{$ct->proInCart->name}}</a>
                                             </div>
                                         </div>
                                         <br>
@@ -184,7 +184,7 @@
                         </div>
                         <div class="row py-2">
                             <div class="col-2 pr-0">
-                                <img src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}"  class="img-fluid" alt="..." width="60px" height="60px;">
+                                <img src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" class="img-fluid lazyload" alt="..." width="60px" height="60px;">
                             </div>
                             <div class="col-6 pr-0">
                                 <a href="{{route('san-pham.show',$ct->proInCart->slug)}}"><p>{{$ct->proInCart->name}}</p></a>
@@ -199,7 +199,7 @@
                                         <div class="row">
                                             <div class="col-4">
                                                 <a href="{{route('san-pham.show',$ct->proInCart->slug)}}">
-                                                    <img class="img-fluid" style="width: 55px;" src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" alt="Chania">
+                                                    <img class="img-fluid lazyload" style="width: 55px;" src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" alt="Chania">
                                                 </a>
                                             </div>
                                             <div class="col-8">

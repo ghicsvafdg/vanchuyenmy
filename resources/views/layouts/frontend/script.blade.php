@@ -16,8 +16,11 @@
 </script>
 {{-- end scroll to top --}}
 
-<script src="{{asset('EasyZoom/dist/easyzoom.js')}}"></script>
+<script src="{{asset('EasyZoom/dist/easyzoom.js')}}" defer></script>
 
+<script src="{{asset('assets/js/plugin/webfont/webfont.min.js')}}" defer></script>
+<script src="{{asset('OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js')}}" defer></script>
+<script src="{{asset('lazysizes.min.js')}}" async></script>
 {{-- select address --}}
 <script type="text/javascript">
     $('#country').change(function(){
@@ -63,7 +66,7 @@
                     }
                 }
             });
-        }else{
+        } else {
             $("#city").empty();
         }
     });
@@ -147,6 +150,7 @@
     })
 </script>
 {{-- show product end --}}
+
 <script>
     window.onscroll = function() {myFunction()};
     
@@ -196,43 +200,22 @@
 <!--END- COUNTDOWN-->
 
 <!--   Core JS Files   -->
-<script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
-<script src="{{asset('assets/js/core/popper.min.js')}}"></script>
-<script src="{{asset('assets/js/core/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}" defer></script>
+<script src="{{asset('assets/js/core/popper.min.js')}}" defer></script>
+<script src="{{asset('assets/js/core/bootstrap.min.js')}}" defer></script>
 
 <!-- jQuery UI -->
-<script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
-<script src="{{asset('assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
-
-<!-- jQuery Scrollbar -->
-{{-- <script src="{{asset('assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script> --}}
-
-<!-- Moment JS -->
-{{-- <script src="{{asset('assets/js/plugin/moment/moment.min.js')}}"></script> --}}
-
-<!-- Chart JS -->
-{{-- <script src="{{asset('assets/js/plugin/chart.js/chart.min.js')}}"></script> --}}
-
-<!-- jQuery Sparkline -->
-{{-- <script src="{{asset('assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script> --}}
-
-<!-- Chart Circle -->
-{{-- <script src="{{asset('assets/js/plugin/chart-circle/circles.min.js')}}"></script> --}}
-
-<!-- Datatables -->
-{{-- <script src="{{asset('assets/js/plugin/datatables/datatables.min.js')}}"></script> --}}
+<script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}" defer></script>
+<script src="{{asset('assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}" defer></script>
 
 <!-- Bootstrap Notify -->
-<script src="{{asset('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}" defer></script>
 
 <!-- Bootstrap Toggle -->
-<script src="{{asset('assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js')}}" defer></script>
 
 <!-- Sweet Alert -->
-<script src="{{asset('assets/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
-
-<!-- Azzara JS -->
-{{-- <script src="{{asset('assets/js/ready.min.js')}}"></script> --}}
+<script src="{{asset('assets/js/plugin/sweetalert/sweetalert.min.js')}}" defer></script>
 
 <script >
     $(document).ready(function() {

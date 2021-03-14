@@ -41,7 +41,7 @@
                         <div class="item">
                             <div class="card-product"> 
                                 <a href="{{route('san-pham.show',$pro->slug)}}">
-                                    <img class="img-fluid" style="height: 210px;" src="{{asset('images/'.json_decode($pro->filename)[0])}}" alt="Chania">
+                                    <img class="img-fluid lazyload" style="height: 210px;" src="{{asset('images/'.json_decode($pro->filename)[0])}}" alt="Chania">
                                 </a>
                                 <div class="col">
                                     <div class="pt-3 title-card" style="height: 50px;">

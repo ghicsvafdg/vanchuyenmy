@@ -53,7 +53,7 @@
                                         </a>
                                         @endif
                                         @endforeach
-                                        <img class="img-fluid" style="width: 190px;" src="{{asset('assets/img/dathongbao.png')}}"  alt="Chania">
+                                        <img class="img-fluid lazyload" style="width: 190px;" src="{{asset('assets/img/dathongbao.png')}}"  alt="Chania">
                                     </div>
                                 </div>
                             </div>

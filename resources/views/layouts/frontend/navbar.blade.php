@@ -45,7 +45,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
             <div class="container">
                 <a class="navbar-brand" href="{{route('index')}}">
-                    <img src="{{asset('assets/img/final-logo.png')}}" class="img-fluid" alt="..." style="width: 200px; height: 55px;">
+                    <img src="{{asset('assets/img/final-logo.png')}}" class="img-fluid lazyload" alt="..." style="width: 200px; height: 55px;">
                 </a>
                 <div class="d-lg-none d-block">
                     <button class="openbtn" onclick="openNav()">☰</button> 
@@ -77,10 +77,10 @@
                                     <div class="avatar-sm">
                                         @if (Auth::user()->avatar)
                                         <object data="{{asset('profile/'.Auth::user()->avatar)}}" class="avatar-img rounded-circle" type="image/png">
-                                            <img src="{{Auth::user()->avatar}}" alt="image profile" class="avatar-img rounded-circle">
+                                            <img src="{{Auth::user()->avatar}}" alt="image profile" class="avatar-img rounded-circle lazyload">
                                         </object>
                                         @else
-                                        <img src="{{asset('profile/default_av.png')}}" alt="image profile" class="avatar-img rounded-circle">
+                                        <img src="{{asset('profile/default_av.png')}}" alt="image profile" class="avatar-img rounded-circle lazyload">
                                         @endif
                                     </div>
                                 </a>
@@ -90,10 +90,10 @@
                                             <div class="avatar-lg">
                                                 @if (Auth::user()->avatar)
                                                 <object data="{{asset('profile/'.Auth::user()->avatar)}}" class="avatar-img rounded" type="image/png">
-                                                    <img src="{{Auth::user()->avatar}}" alt="image profile" class="avatar-img rounded">
+                                                    <img src="{{Auth::user()->avatar}}" alt="image profile" class="avatar-img rounded lazyload">
                                                 </object>
                                                 @else
-                                                <img src="{{asset('profile/default_av.png')}}" alt="image profile" class="avatar-img rounded">
+                                                <img src="{{asset('profile/default_av.png')}}" alt="image profile" class="avatar-img rounded lazyload">
                                                 @endif
                                             </div>
                                             <div class="u-text">
@@ -146,7 +146,7 @@
                                         @foreach ($cart as $ct)
                                         <div class="row pl-2 pb-3 mx-1" id="hover-cart">
                                             <div class="col-2 pr-0">
-                                                <img src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}"  class="img-fluid" alt="..." width="90px" height="90px;">
+                                                <img src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}"  class="img-fluid lazyload" alt="..." width="90px" height="90px;">
                                             </div>
                                             <div class="col-10">
                                                 <div class="row">
@@ -225,7 +225,7 @@
                 
                 <div class="row no-gutters">
                     <div class="px-2 col-md-4">
-                        <img src="{{asset('assets/img/delivery-services.gif')}}" class="card-img"alt="..." style="padding:10px; width: 70px; height:70px;">
+                        <img src="{{asset('assets/img/delivery-services.gif')}}" class="card-img lazyload"alt="..." style="padding:10px; width: 70px; height:70px;">
                     </div>
                     <div class="py-0" style="margin-top: 20px;">
                         <h5><b>HỖ TRỢ VẬN CHUYỂN</b></h5>
@@ -238,7 +238,7 @@
             <div class="col-lg-3 col-md-6 col-6">
                 <div class="row no-gutters">
                     <div class="px-2 col-md-4">
-                        <img src="{{asset('assets/img/tick.png')}}" class="card-img" alt="..." style="padding:10px; width: 70px; height:70px;" >
+                        <img src="{{asset('assets/img/tick.png')}}" class="card-img lazyload" alt="..." style="padding:10px; width: 70px; height:70px;" >
                     </div>
                     <div class="py-0" style="margin-top: 20px;">
                         <h5><b>CAM KẾT CHÍNH HÃNG</b></h5>
@@ -249,7 +249,7 @@
             <div class="col-lg-3 col-md-6 col-6">
                 <div class="row no-gutters">
                     <div class="px-2 col-md-4">
-                        <img src="{{asset('assets/img/money_change.png')}}" class="card-img" alt="..." style="padding:10px; width: 70px; height:70px;" >
+                        <img src="{{asset('assets/img/money_change.png')}}" class="card-img lazyload" alt="..." style="padding:10px; width: 70px; height:70px;" >
                     </div>
                     
                     <div class="py-0" style="margin-top: 20px;">
@@ -262,7 +262,7 @@
             <div class="col-lg-3 col-md-6 col-6">
                 <div class="row no-gutters">
                     <div class="px-2 col-md-4">
-                        <img src="{{asset('assets/img/clock.png')}}" class="card-img" alt="..." style="padding:10px; width: 70px; height:70px;" >
+                        <img src="{{asset('assets/img/clock.png')}}" class="card-img lazyload" alt="..." style="padding:10px; width: 70px; height:70px;" >
                     </div>
                     
                     <div class="py-0" style="margin-top: 20px;">

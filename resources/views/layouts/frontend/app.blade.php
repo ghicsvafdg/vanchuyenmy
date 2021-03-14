@@ -71,7 +71,7 @@
                     <span style="color: #f09819;">Hỗ trợ khách hàng</span>
                     <div class="row pt-2">
                         <div class="col-3">
-                            <img src="{{asset('assets/img/profile.jpg')}}" alt="..." style="width: 40px;" class="avatar-img rounded-circle">
+                            <img src="{{asset('assets/img/profile.jpg')}}" alt="..." style="width: 40px;" class="avatar-img rounded-circle lazyload">
                         </div>
                         <div class="col">
                             <div>ĐẶNG TRƯỜNG</div>
@@ -80,7 +80,7 @@
                     </div>
                     <div class="row pt-2">
                         <div class="col-3">
-                            <img src="{{asset('assets/img/profile.jpg')}}" alt="..." style="width: 40px;" class="avatar-img rounded-circle">
+                            <img src="{{asset('assets/img/profile.jpg')}}" alt="..." style="width: 40px;" class="avatar-img rounded-circle lazyload">
                         </div>
                         <div class="col">
                             <div>THANH TÙNG</div>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="row pt-2">
                         <div class="col-3">
-                            <img src="{{asset('assets/img/female.jpg')}}" alt="..." style="width: 40px;" class="avatar-img rounded-circle">
+                            <img src="{{asset('assets/img/female.jpg')}}" alt="..." style="width: 40px;" class="avatar-img rounded-circle lazyload">
                         </div>
                         <div class="col">
                             <div>MINH ĐỨC</div>

@@ -5,7 +5,7 @@
             <table class="table table-striped mt-3" >
                 <thead>
                     <tr id="credit-card">
-                        <th scope="col"><img src="assets/img/meat_1.png"  class="img-fluid" alt="..." width="60px" height="60px;"></th>
+                        <th scope="col"><img src="assets/img/meat_1.png" class="img-fluid lazyload" alt="..." width="60px" height="60px;"></th>
                         <th scope="col"><a href="productpage.html"><p>YAZOLE Classic Business Men Watches </p></a></th>
                         <th class="text-center" scope="col"> <button type="button" class="btn-btn-delete"><i class="fas fa-trash-alt"></i></button></th>
                     </tr>

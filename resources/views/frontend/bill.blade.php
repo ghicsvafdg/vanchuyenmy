@@ -152,7 +152,7 @@
                             <tbody>
                                 @foreach ($bill->orderDetail as $order)
                                 <tr class="text-center">
-                                    <th scope="row"><img src="{{asset('images/'.json_decode($order->productOrder->filename)[0])}}"  class="img-fluid" alt="..." width="60px" height="60px;"></th>
+                                    <th scope="row"><img src="{{asset('images/'.json_decode($order->productOrder->filename)[0])}}"  class="img-fluid lazyload" alt="..." width="60px" height="60px;"></th>
                                     <td width="25%" class="text-left"> 
                                         <a href="{{route('san-pham.show',$order->productOrder->slug)}}"><p>{{$order->productOrder->name}}</p></a>
                                     </td>

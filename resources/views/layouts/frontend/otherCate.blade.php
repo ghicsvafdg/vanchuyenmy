@@ -25,7 +25,7 @@
                     <div class="owl-carousel owl-theme" id='duc_2carousel'>
                         <div class="item">
                             <div class="card-product">   
-                                <a href="productpage.html"><img class="img-fluid" style="height: 230px;" src="{{asset('assets/img/giado-đt.png')}}" alt="Chania"></a>
+                                <a href="productpage.html"><img class="img-fluid lazyload" style="height: 230px;" src="{{asset('assets/img/giado-đt.png')}}" alt="Chania"></a>
                                 <div class="container">
                                     <div class="pt-3" style="width:100%; height: 40px; ">
                                         <a  class="card-title" style="color: black;" href="productpage.html"><h4><b>Giá đỡ điện thoại ô tô</b></h4></a>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="item">
                             <div class="card-product">  
-                                <a href="productpage.html"><img class="img-fluid" style="height: 230px;" src="{{asset('assets/img/bacnoi.png')}}" alt="Chania"></a>
+                                <a href="productpage.html"><img class="img-fluid lazyload" style="height: 230px;" src="{{asset('assets/img/bacnoi.png')}}" alt="Chania"></a>
                                 <div class="container">
                                     <div class="pt-3" style="width:100%; height: 40px; ">
                                         <a  class="card-title" style="color: black;" href="productpage.html"><h4><b>Bộ 4 miếng bắc nồi</b></h4></a>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="item">
                             <div class="card-product">  
-                                <a href="productpage.html"><img class="img-fluid" style="height: 230px;" src="{{asset('assets/img/box-store.png')}}" alt="Chania"></a>
+                                <a href="productpage.html"><img class="img-fluid lazyload" style="height: 230px;" src="{{asset('assets/img/box-store.png')}}" alt="Chania"></a>
                                 <div class="container">
                                     <div class="pt-3" style="width:100%; height: 40px; ">
                                         <a  class="card-title" style="color: black;" href="productpage.html"><h4><b>Hộp dựng đồng hồ</b></h4></a>
@@ -109,7 +109,7 @@
                         </div>
                         <div class="item">
                             <div class="card-product">  
-                                <a href="productpage.html"><img class="img-fluid" style="height: 230px;" src="{{asset('assets/img/paper-box.png')}}" alt="Chania"></a>
+                                <a href="productpage.html"><img class="img-fluid lazyload" style="height: 230px;" src="{{asset('assets/img/paper-box.png')}}" alt="Chania"></a>
                                 <div class="container">
                                     <div class="pt-3" style="width:100%; height: 40px; ">
                                         <a  class="card-title" style="color: black;" href="productpage.html"><h4><b>Kệ để giấy vệ sinh</b></h4></a>
@@ -137,7 +137,7 @@
                         </div>
                         <div class="item">
                             <div class="card-product"> 
-                                <a href="productpage.html"><img class="img-fluid" style="height: 230px;" src="{{asset('assets/img/maylamsua.png')}}" alt="Chania"></a>
+                                <a href="productpage.html"><img class="img-fluid lazyload" style="height: 230px;" src="{{asset('assets/img/maylamsua.png')}}" alt="Chania"></a>
                                 <div class="container">
                                     <div class="pt-3" style="width:100%; height: 40px; ">
                                         <a  class="card-title" style="color: black;" href="productpage.html"><h4><b>Máy hút sữa điện</b></h4></a>
@@ -165,7 +165,7 @@
                         </div>
                         <div class="item">
                             <div class="card-product">
-                                <a href="productpage.html"><img class="img-fluid" style="height: 230px;" src="{{asset('assets/img/babyboy-cloth.jpg')}}" alt="Chania"></a>
+                                <a href="productpage.html"><img class="img-fluid lazyload" style="height: 230px;" src="{{asset('assets/img/babyboy-cloth.jpg')}}" alt="Chania"></a>
                                 <div class="container">
                                     <div class="pt-3" style="width:100%; height: 40px; ">
                                         <a  class="card-title" style="color: black;" href="productpage.html"><h4><b>Đồ bơi cho bé trai</b></h4></a>
@@ -193,7 +193,7 @@
                         </div>
                         <div class="item">
                             <div class="card-product"> 
-                                <a href="productpage.html"><img class="img-fluid" style="height: 230px;" src="{{asset('assets/img/hat-baby.png')}}" alt="Chania"></a>
+                                <a href="productpage.html"><img class="img-fluid lazyload" style="height: 230px;" src="{{asset('assets/img/hat-baby.png')}}" alt="Chania"></a>
                                 <div class="container">
                                     <div class="pt-3" style="width:100%; height: 40px; ">
                                         <a  class="card-title" style="color: black;" href="productpage.html"><h4><b>Mũ tắm cho bé</b></h4></a>
@@ -221,7 +221,7 @@
                         </div>
                         <div class="item">
                             <div class="card-product">
-                                <a href="productpage.html"><img class="img-fluid" style="height: 230px;" src="{{asset('assets/img/kegiaydep.jpg')}}" alt="Chania"></a>
+                                <a href="productpage.html"><img class="img-fluid lazyload" style="height: 230px;" src="{{asset('assets/img/kegiaydep.jpg')}}" alt="Chania"></a>
                                 <div class="container">
                                     <div class="pt-3" style="width:100%; height: 40px; ">
                                         <a  class="card-title" style="color: black;" href="productpage.html"><h4><b>Combo 5 kệ giày dép</b></h4></a>
@@ -249,7 +249,7 @@
                         </div>
                         <div class="item">
                             <div class="card-product">  
-                                <a href="productpage.html"><img class="img-fluid" style="height: 230px;" src="{{asset('assets/img/khay.jpg')}}" alt="Chania"></a>
+                                <a href="productpage.html"><img class="img-fluid lazyload" style="height: 230px;" src="{{asset('assets/img/khay.jpg')}}" alt="Chania"></a>
                                 <div class="container">
                                     <div class="pt-3" style="width:100%; height: 40px; ">
                                         <a  class="card-title" style="color: black;" href="productpage.html"><h4><b>Combo 4 khay làm đá có nắp đậy</b></h4></a>
@@ -277,7 +277,7 @@
                         </div>
                         <div class="item">
                             <div class="card-product">
-                                <a href="productpage.html"><img class="img-fluid" style="height: 230px;" src="{{asset('assets/img/cut-hair-tool.png')}}" alt="Chania"></a>
+                                <a href="productpage.html"><img class="img-fluid lazyload" style="height: 230px;" src="{{asset('assets/img/cut-hair-tool.png')}}" alt="Chania"></a>
                                 <div class="container">
                                     <div class="pt-3" style="width:100%; height: 40px; ">
                                         <a  class="card-title" style="color: black;" href="productpage.html"><h4><b>Tông đơ cắt tóc</b></h4></a>
@@ -305,7 +305,7 @@
                         </div>
                         <div class="item">
                             <div class="card-product"> 
-                                <a href="productpage.html"><img class="img-fluid" style="height: 230px;" src="{{asset('assets/img/thantai.png')}}" alt="Chania"></a>
+                                <a href="productpage.html"><img class="img-fluid lazyload" style="height: 230px;" src="{{asset('assets/img/thantai.png')}}" alt="Chania"></a>
                                 <div class="container">
                                     <div class="pt-3" style="width:100%; height: 40px; ">
                                         <a  class="card-title" style="color: black;" href="productpage.html"><h4><b>Bộ tượng 4 không</b></h4></a>
@@ -333,7 +333,7 @@
                         </div>
                         <div class="item">
                             <div class="card-product"> 
-                                <a href="productpage.html"><img class="img-fluid" style="height: 230px;" src="{{asset('assets/img/tool-worrkout.jpg')}}" alt="Chania"></a>
+                                <a href="productpage.html"><img class="img-fluid lazyload" style="height: 230px;" src="{{asset('assets/img/tool-worrkout.jpg')}}" alt="Chania"></a>
                                 <div class="container">
                                     <div class="pt-3" style="width:100%; height: 40px; ">
                                         <a  class="card-title" style="color: black;" href="productpage.html"><h4><b>Xà đơn tường loại dài 1m3..</b></h4></a>
@@ -387,7 +387,7 @@
                                 <div class="row no-gutters">
                                     <div class="px-2 col-md-2">
                                         <div class="avatar">
-                                            <img src="{{asset('assets/img/jm_denis.jpg')}}" alt="..." class="avatar-img rounded-circle">
+                                            <img src="{{asset('assets/img/jm_denis.jpg')}}" alt="..." class="avatar-img rounded-circle lazyload">
                                         </div>
                                     </div>
                                     <div class="py-0">
@@ -408,7 +408,7 @@
                                 <div class="row no-gutters">
                                     <div class="px-2 col-md-2">
                                         <div class="avatar">
-                                            <img src="{{asset('assets/img/jm_denis.jpg')}}" alt="..." class="avatar-img rounded-circle">
+                                            <img src="{{asset('assets/img/jm_denis.jpg')}}" alt="..." class="avatar-img rounded-circle lazyload">
                                         </div>
                                     </div>
                                     <div class="py-0">
