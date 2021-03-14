@@ -6,15 +6,15 @@
     <div class="row">
         <div class="col-8">
             <h2>Trang chủ</h2>
-            <img src="{{asset('images/index_section.png')}}" alt="" height="400" width="500" >
+            <img src="{{asset('images/bannerBackend/index_section.png')}}" alt="" height="400" width="500" >
         </div>
         <div class="col-4">
             <h2>Trang chi tiết sản phẩm</h2>
-            <img src="{{asset('images/detail_section.png')}}" alt="" height="600" width="300">
+            <img src="{{asset('images/bannerBackend/detail_section.png')}}" alt="" height="600" width="300">
         </div>
         <div class="col-8">
             <h2>Trang danh mục sản phẩm</h2>
-            <img src="{{asset('images/cate_section.png')}}" alt="" height="400" width="500">
+            <img src="{{asset('images/bannerBackend/cate_section.png')}}" alt="" height="400" width="500">
         </div>
         <div class="col-4">
             <h2>Quy tắc</h2>

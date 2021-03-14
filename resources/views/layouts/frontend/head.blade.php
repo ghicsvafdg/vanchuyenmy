@@ -18,17 +18,6 @@
 <link rel="icon" href="{{asset('images/logo_without_text.png')}}" type="image/x-icon"/>
 
 <!-- Fonts and icons -->
-<script src="{{asset('OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>
-<script>
-    WebFont.load({
-        google: {"families":["Open+Sans:300,400,600,700"]},
-        custom: {"families":["Flaticon", "Font Awesome 5 Solid", 
-        "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['{{asset('assets/css/fonts.css')}}']},
-        active: function() {
-            sessionStorage.fonts = true;
-        }
-    });
-</script>
 
 <!-- CSS Files -->
 <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">

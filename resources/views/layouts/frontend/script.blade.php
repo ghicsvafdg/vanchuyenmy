@@ -1,3 +1,21 @@
+<script src="{{asset('assets/js/plugin/webfont/webfont.min.js')}}"></script>
+
+<script src="{{asset('EasyZoom/dist/easyzoom.js')}}"></script>
+
+<script src="{{asset('OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js')}}"></script>
+<script src="{{asset('OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}" ></script>
+<script src="{{asset('lazysizes.min.js')}}" async></script>
+<script>
+    WebFont.load({
+        google: {"families":["Open+Sans:300,400,600,700"]},
+        custom: {"families":["Flaticon", "Font Awesome 5 Solid",
+                "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['{{asset('assets/css/fonts.css')}}']},
+        active: function() {
+            sessionStorage.fonts = true;
+        }
+    });
+</script>
+
 {{-- scroll to top --}}
 <script>
     var btn = $('#button');
@@ -16,11 +34,6 @@
 </script>
 {{-- end scroll to top --}}
 
-<script src="{{asset('EasyZoom/dist/easyzoom.js')}}" defer></script>
-
-<script src="{{asset('assets/js/plugin/webfont/webfont.min.js')}}" defer></script>
-<script src="{{asset('OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js')}}" defer></script>
-<script src="{{asset('lazysizes.min.js')}}" async></script>
 {{-- select address --}}
 <script type="text/javascript">
     $('#country').change(function(){
@@ -217,13 +230,13 @@
 <!-- Sweet Alert -->
 <script src="{{asset('assets/js/plugin/sweetalert/sweetalert.min.js')}}" defer></script>
 
-<script >
-    $(document).ready(function() {
-        $('#basic-datatables').DataTable({
-            "pageLength": 50,
-        });
-    });
-</script>
+{{--<script >--}}
+{{--    $(document).ready(function() {--}}
+{{--        $('#basic-datatables').DataTable({--}}
+{{--            "pageLength": 50,--}}
+{{--        });--}}
+{{--    });--}}
+{{--</script>--}}
 
 @if (isset($error))
 <script>
