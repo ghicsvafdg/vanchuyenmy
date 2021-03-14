@@ -16,7 +16,7 @@
                         </div>
                         @for ($i = 1; $i < count($array); $i++)
                             <div class="carousel-item">
-                                <a href="{{$array[$]->web_link}}">
+                                <a href="{{$array[$i]->web_link}}">
                                     <img src="{i{asset('banner/'.$array[$i]->filename)}}" class="img-fluid lazyload" alt="banner khu vực 1">
                                 </a>
                             </div>
