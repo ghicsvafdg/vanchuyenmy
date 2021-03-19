@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
 use App\Models\FooterPost;
 use App\Models\Tag;
+use PhpOffice\PhpSpreadsheet\Calculation\Category;
 
 class ProductCategoryController extends Controller
 {
@@ -29,15 +30,23 @@ class ProductCategoryController extends Controller
         }
 
         $banner = Banner::all();
-        $product = Product::where('category_id', '=', $category->id)->paginate(12);
-        
+        $childCategory = $category->childs;
+        $arrayCategory[] = $category->id;
+        foreach ($childCategory as $value) {
+            if (!$value->product->isEmpty()) {
+                $arrayCategory[] = $value->id;
+            }
+        }
+
+        $product = Product::whereIn('category_id', $arrayCategory)->paginate(12);
+
         //hotTags in index
         $tags = Tag::all()->sortByDesc('views')->take(6);
         //hot tags in footer
         $tgs = Tag::all()->sortByDesc('views')->take(12);
         
         //get all active categogies
-        $categories = ProductCategory::where([['parent_id', '=', 0],['status','=',1],])
+        $categories = ProductCategory::where([['parent_id', '=', 0],['status', '=', 1]])
                                         ->OrderBy('order','desc')->get();
             
         $newest = Product::where('category_id', '=', $category->id)->orderBy('created_at', 'DESC')->paginate(12);

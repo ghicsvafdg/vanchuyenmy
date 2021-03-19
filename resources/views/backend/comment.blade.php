@@ -111,7 +111,7 @@
                     @foreach ($comment as $cmt)
                     <tr>
                         <td width="25%">  
-                            <a href="{{route('san-pham.show',$cmt->products->slug)}}">{{$cmt->products->name}}</a>
+                            <a href="{{route('detail-product',$cmt->products->slug)}}">{{$cmt->products->name}}</a>
                             {{-- <a href="">{{$cmt->products->name}}</a> --}}
                         </td>
                         <td>

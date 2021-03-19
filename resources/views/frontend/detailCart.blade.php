@@ -46,7 +46,7 @@
                                 <img src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" class="img-fluid lazyload" alt="..." width="60px" height="60px;">
                             </th>
                             <td class="text-left" width="30%"> 
-                                <a href="{{route('san-pham.show',$ct->proInCart->slug)}}"><p>{{$ct->proInCart->name}}</p></a>
+                                <a href="{{route('detail-product',$ct->proInCart->slug)}}"><p>{{$ct->proInCart->name}}</p></a>
                                 <p>{{$ct->proInCart->product_code}}</p>
                                 <hr>
                                 Còn lại: {{$ct->proInCart->quantity}} sản phẩm
@@ -98,10 +98,10 @@
                                         <h1>Thay đổi thông tin đơn hàng</h1>
                                         <div class="row">
                                             <div class="col-2">
-                                                <a href="{{route('san-pham.show',$ct->proInCart->slug)}}"><img class="img-fluid" style="width: 45px;" src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" alt="Chania"></a>
+                                                <a href="{{route('detail-product',$ct->proInCart->slug)}}"><img class="img-fluid" style="width: 45px;" src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" alt="Chania"></a>
                                             </div>
                                             <div class="col-10">
-                                                <a href="{{route('san-pham.show',$ct->proInCart->slug)}}">{{$ct->proInCart->name}}</a>
+                                                <a href="{{route('detail-product',$ct->proInCart->slug)}}">{{$ct->proInCart->name}}</a>
                                             </div>
                                         </div>
                                         <br>
@@ -187,7 +187,7 @@
                                 <img src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" class="img-fluid lazyload" alt="..." width="60px" height="60px;">
                             </div>
                             <div class="col-6 pr-0">
-                                <a href="{{route('san-pham.show',$ct->proInCart->slug)}}"><p>{{$ct->proInCart->name}}</p></a>
+                                <a href="{{route('detail-product',$ct->proInCart->slug)}}"><p>{{$ct->proInCart->name}}</p></a>
                             </div>
                             <div class="col-4 pl-0 text-center">
                                 <button type="button" onclick="openFormMobile{{$ct->id}}()" class="btn-btn-delete"><i class="mr-1 fas fa-edit"></i>Chỉnh sửa</button>
@@ -198,12 +198,12 @@
                                         <div class="text-center"><h2>Thay đổi thông tin đơn hàng</h2></div>
                                         <div class="row">
                                             <div class="col-4">
-                                                <a href="{{route('san-pham.show',$ct->proInCart->slug)}}">
+                                                <a href="{{route('detail-product',$ct->proInCart->slug)}}">
                                                     <img class="img-fluid lazyload" style="width: 55px;" src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" alt="Chania">
                                                 </a>
                                             </div>
                                             <div class="col-8">
-                                                <a href="{{route('san-pham.show',$ct->proInCart->slug)}}">{{$ct->proInCart->name}}</a></th>
+                                                <a href="{{route('detail-product',$ct->proInCart->slug)}}">{{$ct->proInCart->name}}</a></th>
                                             </div>
                                         </div>
                                         <br>

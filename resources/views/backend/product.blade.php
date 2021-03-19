@@ -125,7 +125,7 @@
                     <tr>
                         <td>{{$i = $i +1}}</td>
                         <td width="25%">  
-                            <a href="{{route('san-pham.show',$pr->slug)}}" target="_blank" rel="noopener noreferrer">{{$pr->name}}</a>
+                            <a href="{{route('detail-product',$pr->slug)}}" target="_blank" rel="noopener noreferrer">{{$pr->name}}</a>
                         </td>
                         <td>
                             <img src="{{asset('images/'.json_decode($pr->filename)[0])}}" alt="" height="40px" width="40px">

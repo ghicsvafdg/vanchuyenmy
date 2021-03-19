@@ -121,12 +121,12 @@
                                     @foreach ($product as $pro)
                                     <div class="px-2 col-lg-3 col-6">
                                         <div class="card-product">  
-                                            <a href="{{route('san-pham.show',$pro->slug)}}">
+                                            <a href="{{route('detail-product',$pro->slug)}}">
                                                 <img class="img-fluid lazyload" style="height: 210px;" src="{{asset('images/'.json_decode($pro->filename)[0])}}" alt="Chania">
                                             </a>
                                             <div class="col">
                                                 <div class="pt-3" id="title-card">
-                                                    <a class="card-title" href="{{route('san-pham.show',$pro->slug)}}">
+                                                    <a class="card-title" href="{{route('detail-product',$pro->slug)}}">
                                                         <h4 class="ellipsis">
                                                             {{$pro->name}} 
                                                         </h4>
@@ -137,14 +137,14 @@
                                                         <div class="row">
                                                             @if (!empty($pro->promotion))               
                                                             <p class="main-cost">
-                                                                <b>{{number_format( $pro->price*1000, 0, ',', '.' )}}đ</b>
+                                                                <b>{{number_format( $pro->promotion*1000, 0, ',', '.' )}}đ</b>
                                                             </p>                
                                                             <p class="pt-1" id="abondon-text-cost">
-                                                                {{number_format( $pro->promotion*1000, 0, ',', '.' )}}đ
+                                                                {{number_format( $pro->price*1000, 0, ',', '.' )}}đ
                                                             </p>
                                                             @else
                                                             <p class="main-cost">
-                                                                <b>{{number_format( $pro->promotion*1000, 0, ',', '.' )}}đ</b>
+                                                                <b>{{number_format( $pro->price*1000, 0, ',', '.' )}}đ</b>
                                                             </p>
                                                             @endif
                                                         </div>
@@ -159,7 +159,7 @@
                                                     <span class="fa fa-star @if(floatval($pro->star) > 4.5) checked @endif" id="star"></span>
                                                 </div>
                                                 <div class="row pb-3" id="icon-view-details">
-                                                    <a href="{{route('san-pham.show',$pro->slug)}}">
+                                                    <a href="{{route('detail-product',$pro->slug)}}">
                                                         <div class="col" style="color: blue;">Xem chi tiết</div>
                                                     </a>
                                                     @if (Auth::check())
@@ -217,12 +217,12 @@
                                     @foreach ($newest as $pro)
                                     <div class="px-2 col-lg-3 col-6">
                                         <div class="card-product">  
-                                            <a href="{{route('san-pham.show',$pro->slug)}}">
+                                            <a href="{{route('detail-product',$pro->slug)}}">
                                                 <img class="img-fluid lazyload" style="height: 210px;" src="{{asset('images/'.json_decode($pro->filename)[0])}}" alt="Chania">
                                             </a>
                                             <div class="col">
                                                 <div class="pt-3" id="title-card">
-                                                    <a class="card-title" href="{{route('san-pham.show',$pro->slug)}}">
+                                                    <a class="card-title" href="{{route('detail-product',$pro->slug)}}">
                                                         <h4 class="ellipsis">
                                                             {{$pro->name}} 
                                                         </h4>
@@ -255,7 +255,7 @@
                                                     <span class="fa fa-star @if(floatval($pro->star) > 4.5) checked @endif" id="star"></span>
                                                 </div>
                                                 <div class="row pb-3" id="icon-view-details">
-                                                    <a href="{{route('san-pham.show',$pro->slug)}}">
+                                                    <a href="{{route('detail-product',$pro->slug)}}">
                                                         <div class="col" style="color: blue;">Xem chi tiết</div>
                                                     </a>
                                                     @if (Auth::check())

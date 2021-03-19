@@ -61,35 +61,31 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //get present product quantity
+        // get present product quantity
         $productQuan = Product::findOrFail($request->get('product_id'))->quantity;
 
-        //return error when quantity smaller than 1
+        // return error when quantity smaller than 1
         $getInputQuan = $request->get('quantity');
-        if($getInputQuan < 1)
-        {
+        if ($getInputQuan < 1) {
             return back()->with('error','Số lượng sản phẩm không hợp lệ');
         }
 
         //find product in cart
         $checkProduct = Cart::where([['user_id',Auth::user()->id],
-                                    ['product_id',$request->get('product_id')],
-                                    ['color',$request->get('color')],
-                                    ['size',$request->get('size')]])->first();
+                                    ['product_id', $request->get('product_id')],
+                                    ['color', $request->get('color')],
+                                    ['size', $request->get('size')]])->first();
 
         //add quantity if product is the same
-        if(!($checkProduct === Null) && $checkProduct->color == $request->get('color') && $checkProduct->size == $request->get('size'))
-        {
+        if (!($checkProduct === Null) && $checkProduct->color == $request->get('color') &&
+            $checkProduct->size == $request->get('size')) {
             $checkProduct->quantity = $checkProduct->quantity + $getInputQuan;
-            if($checkProduct->quantity > $productQuan)
-            {
+            if ($checkProduct->quantity > $productQuan) {
                 return back()->with('error','Số lượng sản phẩm trong kho không đủ yêu cầu');
             }
             $checkProduct->save();
-        }else
-        {
-            if($getInputQuan > $productQuan)
-            {
+        } else {
+            if ($getInputQuan > $productQuan) {
                 return back()->with('error','Số lượng sản phẩm trong kho không đủ yêu cầu');
             }
 
@@ -102,8 +98,11 @@ class CartController extends Controller
             $cart->save();
         }
 
+        if (isset($_POST['buy_now']) && $_POST['buy_now'] == 'buy_now') {
+            return $this->index();
+        }
         // $product = Product::where('id',$request->get('product_id'))->first();
-        return back()->with('success','Thêm sản phẩm vào giỏ hàng thành công');
+        return back()->with('success', 'Thêm sản phẩm vào giỏ hàng thành công');
     }
 
     /**
@@ -114,7 +113,7 @@ class CartController extends Controller
      */
     public function show(Cart $cart)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -125,7 +124,7 @@ class CartController extends Controller
      */
     public function edit(Cart $cart)
     {
-        //
+        abort(404);
     }
 
     /**

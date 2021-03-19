@@ -22,10 +22,10 @@
                                 @foreach ($product as $pro)
                                 <div class="px-2 col-lg-3" >
                                     <div class="card-product">  
-                                        <a href="{{route('san-pham.show',$pro->getProduct->slug)}}"> <img class="img-fluid lazyload" style="height: 210px;" src="{{asset('images/'.json_decode($pro->getProduct->filename)[0])}}" alt="Chania"></a>
+                                        <a href="{{route('detail-product',$pro->getProduct->slug)}}"> <img class="img-fluid lazyload" style="height: 210px;" src="{{asset('images/'.json_decode($pro->getProduct->filename)[0])}}" alt="Chania"></a>
                                         <div class="col">
                                             <div class="pt-3 title-card" style="height: 55px;">
-                                                <a class="card-title" style="height: 50px;"  href="{{route('san-pham.show',$pro->getProduct->slug)}}">
+                                                <a class="card-title" style="height: 50px;"  href="{{route('detail-product',$pro->getProduct->slug)}}">
                                                     <h4 class="ellipsis">
                                                         {{$pro->getProduct->name}} 
                                                     </h4>
@@ -58,7 +58,7 @@
                                                 <span class="fa fa-star" id="star"></span>
                                             </div>
                                             <div class="row pb-3 icon-view-details">
-                                                <a href="{{route('san-pham.show',$pro->getProduct->slug)}}">
+                                                <a href="{{route('detail-product',$pro->getProduct->slug)}}">
                                                     <div class="col" style="color: blue;">Xem chi tiết</div>
                                                 </a>
                                                 @if (Auth::check())

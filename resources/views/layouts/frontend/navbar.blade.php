@@ -151,7 +151,7 @@
                                             <div class="col-10">
                                                 <div class="row">
                                                     <div class="col-9">
-                                                        <a class="ellipsis2" href="{{route('san-pham.show',$ct->proInCart->slug)}}" style="width:230px;">{{$ct->proInCart->name}}</a>
+                                                        <a class="ellipsis2" href="{{route('detail-product',$ct->proInCart->slug)}}" style="width:230px;">{{$ct->proInCart->name}}</a>
                                                     </div>
                                                     <div class="col-3">
                                                         <p style="color:#f09819;">

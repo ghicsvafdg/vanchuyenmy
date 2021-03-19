@@ -129,7 +129,7 @@
                         <table class="table table-striped mb-4">
                             <thead>
                                 <tr>
-                                    <th colspan="2"> <a href="{{route('san-pham.show',$detail->productOrder->slug)}}">{{$detail->productOrder->name}}</a></th>
+                                    <th colspan="2"> <a href="{{route('detail-product',$detail->productOrder->slug)}}">{{$detail->productOrder->name}}</a></th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -40,12 +40,12 @@
                         @foreach ($product as $pro)
                         <div class="item">
                             <div class="card-product"> 
-                                <a href="{{route('san-pham.show',$pro->slug)}}">
+                                <a href="{{route('detail-product',$pro->slug)}}">
                                     <img class="img-fluid lazyload" style="height: 210px;" src="{{asset('images/'.json_decode($pro->filename)[0])}}" alt="Chania">
                                 </a>
                                 <div class="col">
                                     <div class="pt-3 title-card" style="height: 50px;">
-                                        <a class="card-title" href="{{route('san-pham.show',$pro->slug)}}" style="height: 55px;">
+                                        <a class="card-title" href="{{route('detail-product',$pro->slug)}}" style="height: 55px;">
                                             <h4 class="ellipsis">
                                                 {{$pro->name}}
                                             </h4>
@@ -79,7 +79,7 @@
                                         <span class="fa fa-star" id="star"></span>
                                     </div>
                                     <div class="row pb-3 icon-view-details">
-                                        <a href="{{route('san-pham.show',$pro->slug)}}">
+                                        <a href="{{route('detail-product',$pro->slug)}}">
                                             <div class="col" style="color: blue;">Xem chi tiết</div>
                                         </a>
                                         @if (Auth::check())

@@ -18,11 +18,16 @@
 <link rel="icon" href="{{asset('images/logo_without_text.png')}}" type="image/x-icon"/>
 
 <!-- Fonts and icons -->
+<script src="{{asset('assets/js/plugin/webfont/webfont.min.js')}}"></script>
+
+<script src="{{asset('OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js')}}"></script>
+<script src="{{asset('OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}" ></script>
+<script src="{{asset('assets/js/lazysizes.min.js')}}"></script>
 
 <!-- CSS Files -->
 <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
 
-<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript" defer></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="{{asset('assets/css/azzara.min.css')}}">
 <link rel="stylesheet" href="{{asset('OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css')}}">

@@ -22,7 +22,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('san-pham.show',$product->slug)}}">
+                        <a href="{{route('detail-product',$product->slug)}}">
                             {{$product->name}}
                         </a>
                     </li>
@@ -47,7 +47,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('san-pham.show',$product->slug)}}">
+                        <a href="{{route('detail-product',$product->slug)}}">
                             {{$product->name}}
                         </a>
                     </li>
@@ -269,7 +269,9 @@
                                                             <i class="fas fa-cart-plus" style="margin-right: 7px; "></i>THÊM VÀO GIỎ HÀNG
                                                         </button>
                                                         &nbsp;
-                                                        <a href="#"><button type="button" class="btn-pay">MUA NGAY</button></a>
+                                                        <button type="submit" name="buy_now" value="buy_now" class="btn-pay" id="buy_now">
+                                                            MUA NGAY
+                                                        </button>
                                                     </div>
                                                     @else
                                                     <a href="{{route('login')}}" class="btn btn-info" id="alert_demo_1"><i class="fas fa-cart-plus" style="margin-right: 7px;"></i>THÊM VÀO GIỎ HÀNG</a>
@@ -560,12 +562,12 @@
                     @foreach ($relateProduct as $relateProduct)
                     <div class="item" id="shadow-card">
                         <div class="card">  
-                            <a href="{{route('san-pham.show',$relateProduct->slug)}}">
+                            <a href="{{route('detail-product',$relateProduct->slug)}}">
                                 <img class="img-fluid lazyload" style="height: 210px;" src="{{asset('images/'.json_decode($relateProduct->filename)[0])}}" alt="Chania">
                             </a>
                             <div class="px-2">
                                 <div class="pt-3 title-card" style="height: 55px;">
-                                    <a class="card-title" href="{{route('san-pham.show',$relateProduct->slug)}}">
+                                    <a class="card-title" href="{{route('detail-product',$relateProduct->slug)}}">
                                         <h4 class="ellipsis">{{$relateProduct->name}}</h4>
                                     </a>
                                 </div>
@@ -595,7 +597,7 @@
                                     <span class="fa fa-star @if(floatval($relateProduct->star) > 4.5) checked @endif" id="star"></span>
                                 </div>
                                 <div class="row pb-3 icon-view-details">
-                                    <a href="{{route('san-pham.show',$relateProduct->slug)}}">
+                                    <a href="{{route('detail-product',$relateProduct->slug)}}">
                                         <div class="col" style="color: blue;">Xem chi tiết</div>
                                     </a>
                                     @if (Auth::check())
@@ -638,12 +640,12 @@
                     @foreach ($viewedList as $productViewed)
                     <div class="item" id="shadow-card">
                         <div class="card">  
-                            <a href="{{route('san-pham.show',$productViewed->viewedProduct->slug)}}">
+                            <a href="{{route('detail-product',$productViewed->viewedProduct->slug)}}">
                                 <img class="img-fluid lazyload" style="height: 210px;" src="{{asset('images/'.json_decode($productViewed->viewedProduct->filename)[0])}}" alt="Chania">
                             </a>
                             <div class="px-2">
                                 <div class="pt-3 title-card" style="height: 55px;">
-                                    <a class="card-title" href="{{route('san-pham.show',$productViewed->viewedProduct->slug)}}">
+                                    <a class="card-title" href="{{route('detail-product',$productViewed->viewedProduct->slug)}}">
                                         <h4 class="ellipsis">{{$productViewed->viewedProduct->name}}</h4>
                                     </a>
                                 </div>
@@ -673,7 +675,7 @@
                                     <span class="fa fa-star @if(floatval($productViewed->viewedProduct->star) > 4.5) checked @endif" id="star"></span>
                                 </div>
                                 <div class="row pb-3 icon-view-details">
-                                    <a href="{{route('san-pham.show',$productViewed->viewedProduct->slug)}}"> <div class="col" style="color: blue;">Xem chi tiết</div></a>
+                                    <a href="{{route('detail-product', $productViewed->viewedProduct->slug)}}"> <div class="col" style="color: blue;">Xem chi tiết</div></a>
                                     
                                     @if (Auth::check())
                                     <form action="{{route('cart.store')}}" method="post">

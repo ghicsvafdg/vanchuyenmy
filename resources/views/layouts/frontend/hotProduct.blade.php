@@ -9,12 +9,12 @@
     @foreach ($hotProducts as $product)
     <div class="item">
         <div class="card-product">   
-            <a href="{{route('san-pham.show',App\Models\Product::findOrFail($product->products_id)->slug)}}">
+            <a href="{{route('detail-product',App\Models\Product::findOrFail($product->products_id)->slug)}}">
                 <img class="img-fluid lazyload" style="height: 200px;" src="{{asset('images/'.json_decode(App\Models\Product::findOrFail($product->products_id)->filename)[0])}}" alt="Chania">
             </a>
             <div class="col">
                 <div class="pt-3 title-card" style="height: 55px;">
-                    <a class="card-title" style="height: 50px;" href="{{route('san-pham.show',App\Models\Product::findOrFail($product->products_id)->slug)}}">
+                    <a class="card-title" style="height: 50px;" href="{{route('detail-product',App\Models\Product::findOrFail($product->products_id)->slug)}}">
                         <h4 class="ellipsis">
                             {{App\Models\Product::findOrFail($product->products_id)->name}}
                         </h4>
@@ -48,7 +48,7 @@
                     <span class="fa fa-star @if(floatval(App\Models\Product::findOrFail($product->products_id)->star) > 4.5) checked @endif" id="star"></span>
                 </div>
                 <div class="row pb-3 icon-view-details">
-                    <a href="{{route('san-pham.show',App\Models\Product::findOrFail($product->products_id)->slug)}}">
+                    <a href="{{route('detail-product',App\Models\Product::findOrFail($product->products_id)->slug)}}">
                         <div class="col" style="color: blue;">Xem chi tiết</div>
                     </a>
                     @if (Auth::check())

@@ -19,10 +19,6 @@ use App\Models\Tag;
 
 class ProductController extends Controller
 {
-    public function index()
-    {
-        abort(404);
-    }
 
     public function show($slug)
     {

@@ -71,9 +71,9 @@ Route::post('filter-search', 'Frontend\HomeController@filterSearch')->name('filt
 
 Route::get('danh-muc/{id}','Frontend\ProductCategoryController@show')->name('danh-muc');
 Route::get('filter-product-cate/{id}', 'Frontend\ProductCategoryController@filter')->name('filter-product-cate');
+Route::get('san-pham/{id}', 'Frontend\ProductController@show')->name('detail-product');
 
 Route::resource('post','Frontend\PostController');
-Route::resource('san-pham','Frontend\ProductController');
 Route::resource('cart','Backend\CartController');
 Route::resource('order','Backend\OrderDetailController');
 Route::resource('user','Frontend\UserController');

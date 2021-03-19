@@ -1,10 +1,3 @@
-<script src="{{asset('assets/js/plugin/webfont/webfont.min.js')}}"></script>
-
-<script src="{{asset('EasyZoom/dist/easyzoom.js')}}"></script>
-
-<script src="{{asset('OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js')}}"></script>
-<script src="{{asset('OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}" ></script>
-<script src="{{asset('lazysizes.min.js')}}" async></script>
 <script>
     WebFont.load({
         google: {"families":["Open+Sans:300,400,600,700"]},
@@ -85,7 +78,7 @@
     });
 </script> 
 {{-- end select address --}}
-
+<script src="{{asset('EasyZoom/dist/easyzoom.js')}}"></script>
 <script>
     // Instantiate EasyZoom instances
     var $easyzoom = $('.easyzoom').easyZoom();
@@ -213,22 +206,22 @@
 <!--END- COUNTDOWN-->
 
 <!--   Core JS Files   -->
-<script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}" defer></script>
-<script src="{{asset('assets/js/core/popper.min.js')}}" defer></script>
-<script src="{{asset('assets/js/core/bootstrap.min.js')}}" defer></script>
+<script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
+<script src="{{asset('assets/js/core/popper.min.js')}}"></script>
+<script src="{{asset('assets/js/core/bootstrap.min.js')}}"></script>
 
 <!-- jQuery UI -->
-<script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}" defer></script>
-<script src="{{asset('assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}" defer></script>
+<script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
 
 <!-- Bootstrap Notify -->
-<script src="{{asset('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}" defer></script>
+<script src="{{asset('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 
 <!-- Bootstrap Toggle -->
-<script src="{{asset('assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js')}}" defer></script>
+<script src="{{asset('assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js')}}"></script>
 
 <!-- Sweet Alert -->
-<script src="{{asset('assets/js/plugin/sweetalert/sweetalert.min.js')}}" defer></script>
+<script src="{{asset('assets/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
 
 {{--<script >--}}
 {{--    $(document).ready(function() {--}}

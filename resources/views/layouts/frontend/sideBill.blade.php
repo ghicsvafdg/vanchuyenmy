@@ -10,12 +10,12 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th colspan="2"><a href="{{route('san-pham.show',$ct->proInCart->slug)}}">{{$ct->proInCart->name}}</a></th>
+                                <th colspan="2"><a href="{{route('detail-product',$ct->proInCart->slug)}}">{{$ct->proInCart->name}}</a></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="{{route('san-pham.show',$ct->proInCart->slug)}}"><img class="img-fluid lazyload" style="width: 45px;" src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" alt="Chania"></a></td>
+                                <td><a href="{{route('detail-product',$ct->proInCart->slug)}}"><img class="img-fluid lazyload" style="width: 45px;" src="{{asset('images/'.json_decode($ct->proInCart->filename)[0])}}" alt="Chania"></a></td>
                                 <td>
                                     <div class="" id="final-price">
                                         @if ($ct->proInCart->promotion)
