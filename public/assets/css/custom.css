@@ -1183,6 +1183,11 @@ img {
 .banner-voucher img {
    width: 1150px;
 }
+
+.banner5 img:first-child {
+margin-bottom: 80px;
+}
+
 #warning3{
    background-color: #fffeee;
    border: 1px solid #ffcd87;

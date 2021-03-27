@@ -332,7 +332,7 @@
                                     {!!$product->content!!}
                                 </div>
                             </div>
-                            <div class="col-lg-3 d-none d-lg-block">
+                            <div class="col-lg-3 d-none d-lg-block banner5">
                                 @if(!$banner->isEmpty())
                                     @foreach ($banner as $bn)
                                     @if ($bn->section == 5)
