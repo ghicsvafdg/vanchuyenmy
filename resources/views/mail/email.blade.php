@@ -128,12 +128,12 @@
                         <br> 
                         <br>
                         chân thành cảm ơn quý khách đã mua sắm tại 
-                        <a href="https://vanchuyenmy.vn/" class="new">VanChuyenMy.vn</a>
+                        <a href="https://mamabi.vn/" class="new">mamabi.vn</a>
                         <br>    
                         <br>                                    
                         Chúng tôi hy vọng Quý khách hài lòng với trải nghiệm mua sắm và các sản phẩm đã chọn.
                         <br>
-                        <a href="https://vanchuyenmy.vn/" class="new">VanChuyenMy.vn</a> 
+                        <a href="https://mamabi.vn/" class="new">mamabi.vn</a>
                         vừa nhận được thông tin đặt hàng của quý khách với chi tiết đơn hàng như sau:
                         <br>
                         <br>
@@ -145,7 +145,7 @@
                             <tr>
                                 <td>
                                     <div style="padding: 10px;">Mã đơn hàng: {{$getOrder->order_code}}</div>    
-                                    <div style="padding: 10px;">Ngày / Giờ: {{date("d/m/Y",strtotime($getOrder->created_at))}}</div>
+                                    <div style="padding: 10px;">Ngày/Giờ: {{date("d/m/Y",strtotime($getOrder->created_at))}}</div>
                                 </td>
                                 <td>
                                     <div style="padding: 10px;">Họ và tên: {{$getOrder->name}}</div> 
@@ -165,7 +165,7 @@
                             @foreach ($getOrderDetail as $order)
                             <tr style="border: 1px solid #ddd;">
                                 <td style="width:30%">
-                                    <a href="https://vanchuyenmy.vn/san-pham/{{$order->productOrder->slug}}">{{$order->productOrder->name}}</a>    
+                                    <a href="https://mamabi.vn/san-pham/{{$order->productOrder->slug}}">{{$order->productOrder->name}}</a>
                                 </td>
                                 <td style="text-align: center;">
                                     {{$order->quantity}}
@@ -232,13 +232,13 @@
                         <p>
                             Mọi thắc mắc và góp ý, Quý khách vui lòng liên hệ với chúng tôi qua:
                         </p>
-                            Email hỗ trợ :<a href="#" title="" class="new"> support@weshop.com.vn</a> hoặc
+                            Email hỗ trợ:<a href="#" title="" class="new"> cskh.mamabivn@gmail.com</a> hoặc
                         <br>
                         <br>
-                            Tổng đài Chăm sóc khách hàng: 1900 6755 hoặc Hotline : 0932 277 572
+                            Tổng đài Chăm sóc khách hàng: 0981.994.856 hoặc Hotline: 0911.363.222
                         <br> 
                         <br>                         
-                            Weshop trân trọng cảm ơn và rất hân hạnh được phục vụ Quý khách.
+                            Mamabi trân trọng cảm ơn và rất hân hạnh được phục vụ Quý khách.
                         <br>
                         <br>
                         <br>
@@ -248,9 +248,9 @@
                         <br>
                     </div>
                     <div style="padding: 30px 70px;">
-                        <a href="https://vanchuyenmy.vn/check-cart" title="" class="new">Kiểm tra đơn hàng</a> <br>
-                        <a href="https://vanchuyenmy.vn/footer-post/Chinh-sach-bao-hanh-ho-tro" title="" class="new">Chính sách đổi trả</a> <br>
-                        <a href="https://vanchuyenmy.vn/footer-post/Cac-dieu-khoan-dieu-kien" title="" class="new">Điều khoản & điều kiện</a>
+                        <a href="https://mamabi.vn/check-cart" title="" class="new">Kiểm tra đơn hàng</a> <br>
+                        <a href="https://mamabi.vn/footer-post/Chinh-sach-bao-hanh-ho-tro" title="" class="new">Chính sách đổi trả</a> <br>
+                        <a href="https://mamabi.vn/footer-post/Cac-dieu-khoan-dieu-kien" title="" class="new">Điều khoản & điều kiện</a>
                     </div> 
                 </div>
             </div>

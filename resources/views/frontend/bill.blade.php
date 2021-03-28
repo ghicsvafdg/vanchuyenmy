@@ -38,22 +38,23 @@
                 <div class="card">
                     <div class="row py-lg-3 px-lg-3 mx-lg-3 px-2 py-2" style="border-bottom: 1px solid rgb(236, 235, 235)">
                         <div class="col-3 px-lg pr-0">
-                            <a href="{{route('order.show',$bill->user_id)}}"><i class="fas fa-angle-double-left mr-1"></i>Danh sách đơn hàng</a>
+                            <a href="{{route('order.show', $bill->user_id)}}"><i class="fas fa-angle-double-left mr-1"></i>Danh sách đơn hàng</a>
                         </div>
                         <div class="text-center pl-lg pl-0 col-9 col-lg-6" id="details-order">
                             <p><b>Chi tiết đơn hàng: {{$bill->order_code}}</b></p>
-                            <p><i style="color: rgb(172, 169, 169);">Ngày đặt hàng: {{date('d-m-Y H:i:s',strtotime($bill->created_at))}}</i>
+                            <p>
+                                <i style="color: rgb(172, 169, 169);">Ngày đặt hàng: {{date('d-m-Y H:i:s', strtotime($bill->created_at))}}</i>
                                 <span>
                                     @if ($bill->status == 1)
                                     {{'Chưa duyệt'}}
                                     @endif
-                                </span> 
+                                </span>
                             </p>
                             <form action="{{route('don-hang.update', $bill->id)}}" method="post">
                                 @method('patch')
                                 @csrf
                                 <button>
-                                    <span style="color:#b9232e ;">X</span> Hủy đơn hàng</p>
+                                    <span style="color:#b9232e ;">X</span> Hủy đơn hàng
                                 </button>
                             </form>
                         </div>

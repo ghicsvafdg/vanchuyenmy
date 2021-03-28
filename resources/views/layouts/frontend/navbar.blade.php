@@ -118,7 +118,7 @@
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="{{route('user.show',Auth::user()->id)}}">Trang cá nhân</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{route('order.show',Auth::user()->id)}}">Lịch sử đơn hàng</a>
+                                        <a class="dropdown-item" href="{{route('order.index', Auth::user()->id)}}">Lịch sử đơn hàng</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="{{url('dia-chi')}}">Thiết lập địa chỉ</a>
                                         <div class="dropdown-divider"></div>

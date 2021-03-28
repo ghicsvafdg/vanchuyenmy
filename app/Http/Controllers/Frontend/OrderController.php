@@ -19,12 +19,9 @@ class OrderController extends Controller
     */
     public function index()
     {
-        
-        
-        if(Auth::check())
-        {
-            $status =null;
-            $date_from=null;
+        if (Auth::check()) {
+            $status = null;
+            $date_from = null;
             $date_to = null;
             $footerPost = FooterPost::where('status',1)->get();
             
@@ -75,11 +72,10 @@ class OrderController extends Controller
     */
     public function show($id)
     {
-        
-        if(Auth::check())
-        {
+        if (Auth::check()) {
             //hotTags in index
             $tags = Tag::all()->sortByDesc('views')->take(6);
+
             //hot tags in footer
             $tgs = Tag::all()->sortByDesc('views')->take(12);
 

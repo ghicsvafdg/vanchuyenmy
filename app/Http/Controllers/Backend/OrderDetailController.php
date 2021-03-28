@@ -46,9 +46,6 @@ class OrderDetailController extends Controller
         foreach ($request->carts as $cart_id) {
             $cart = Cart::findOrFail($cart_id); // validations the product id
 
-            // get your information's from db (color,size,price) don't trust get information's from user .
-            // $product->price , $product->color ....
-
             // must be create new table
             $orderProducts = new OrderDetail(); // create new table ordersProducts
 
@@ -72,27 +69,22 @@ class OrderDetailController extends Controller
     {
         $status = null;
         $date_from = null;
-        $date_to=null;
-        if (Auth::check() && Auth::user()->role == 0) {
+        $date_to = null;
+
+        if (Auth::check() && Auth::user()->id == $id) {
             //hotTags in index
             $tags = Tag::all()->sortByDesc('views')->take(6);
             //hot tags in footer
             $tgs = Tag::all()->sortByDesc('views')->take(12);
 
             //get all active categogies
-            $categories = ProductCategory::where([['parent_id', '=', 0],['status','=',1]])
-                ->OrderBy('order', 'desc')->get();
+            $categories = ProductCategory::where([['parent_id', '=', 0], ['status','=',1]])->OrderBy('order', 'desc')->get();
 
             $footerPost = FooterPost::where('status', 1)->get();
-
             $order = Order::where('user_id', $id)->orderBy('created_at', 'desc')->get();
-
             $user = User::findOrFail($id);
-
             $cartlist = Cart::where('user_id', Auth::user()->id)->count();
-
             $cart = Cart::where('user_id', Auth::user()->id)->get();
-
             return view('frontend.orderList', compact('tags', 'tgs', 'categories', 'order', 'user', 'cart', 'cartlist', 'footerPost', 'status', 'date_from', 'date_to  '));
         }
         return redirect()->route('login');
