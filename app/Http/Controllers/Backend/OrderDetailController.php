@@ -85,7 +85,7 @@ class OrderDetailController extends Controller
             $user = User::findOrFail($id);
             $cartlist = Cart::where('user_id', Auth::user()->id)->count();
             $cart = Cart::where('user_id', Auth::user()->id)->get();
-            return view('frontend.orderList', compact('tags', 'tgs', 'categories', 'order', 'user', 'cart', 'cartlist', 'footerPost', 'status', 'date_from', 'date_to  '));
+            return view('frontend.orderList', compact('tags', 'tgs', 'categories', 'order', 'user', 'cart', 'cartlist', 'footerPost', 'status', 'date_from', 'date_to'));
         }
         return redirect()->route('login');
     }
