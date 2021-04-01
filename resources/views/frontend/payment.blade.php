@@ -47,10 +47,11 @@
                             </div>
                         </div>
                         <div class="col-md-12 py-2">
+                            <?php $i = 0?>
                             @foreach ($user->address as $address)
                                 <div>
-                                    <input type="radio" name="address" class="form-radio-first" required value="{{$address->id}}" @if(isset($add) && ($add->id == $address->id)) checked @endif> 
-                                    <label> 
+                                    <input type="radio" id="add<?= ++$i ?>" name="address" class="form-radio-first" required value="{{$address->id}}" @if(isset($add) && ($add->id == $address->id)) checked @endif>
+                                    <label for="add<?= $i ?>">
                                         <b>{{$address->name}} {{$address->phone}}</b> 
                                         {{$address->note.', '.$address->address}}
                                     </label>

@@ -1,6 +1,6 @@
 <div class="mt-3 content">
     <div class="col" id="title-pay">
-        <p><i class="fas fa-check" style="color: rgb(119, 197, 1);"></i> Quý khách được miễn phí xử lý giao dịch</p>
+        <p><i class="fas fa-check" style="color: rgb(119, 197, 1);"></i>Quý khách được miễn phí xử lý giao dịch</p>
     </div>
     <div class="px-4 row" id="text-sum-cost">
         <div class="text-left col">

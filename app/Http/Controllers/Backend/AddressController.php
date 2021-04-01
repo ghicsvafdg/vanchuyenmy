@@ -90,8 +90,7 @@ class AddressController extends Controller
      */
     public function create()
     {
-        if(Auth::check())
-        {   
+        if (Auth::check()) {
             $footerPost = FooterPost::where('status',1)->get();
             $address = Address::where('user_id',Auth::user()->id)->get();
 
@@ -314,8 +313,7 @@ class AddressController extends Controller
         
         $sum = 0;
         date_default_timezone_set('Asia/Ho_Chi_Minh');
-        switch($request->input('action'))
-        {
+        switch($request->input('action')) {
             case 'voucher':
                 {
                     $code = Code::where('code',$request->get('voucher'))->first();
@@ -362,8 +360,7 @@ class AddressController extends Controller
                 }
             case 'paymoney':
                 {
-                    if(Auth::check())
-                    {
+                    if (Auth::check()) {
                         $add = Address::where('id',$request->get('address'))->first();
                         
                         //order
@@ -381,8 +378,7 @@ class AddressController extends Controller
             
                         //reduce 1 using time of voucher
                         $voucher = Code::where('code',$request->get('code'))->first();
-                        if(isset($voucher))
-                        {
+                        if (isset($voucher)) {
                             $voucher->use_time = $voucher->use_time - 1;
                             $voucher->save();
                         }
@@ -391,13 +387,11 @@ class AddressController extends Controller
                         $orderCode = Order::where('order_code',$code)->first()->id;
                         
                         //check cart is empty
-                        if(empty($request->carts))
-                        {
+                        if (empty($request->carts)) {
                             return back()->with('error','Không có sản phẩm nào trong giỏ <br> không thể đặt hàng');
                         }
                         //store product from cart into order
-                        foreach($request->carts as $cart_id)
-                        {
+                        foreach ($request->carts as $cart_id) {
                             $cart = Cart::findOrFail($cart_id); 
                             $orderProducts = new OrderDetail;
             
