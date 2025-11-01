@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Tag;
+
 class TagTableSeeder extends Seeder
 {
     /**
@@ -11,6 +12,6 @@ class TagTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Tag::class, 10)->create();
+        \App\Models\Tag::factory()->count(10)->create();
     }
 }

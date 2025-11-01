@@ -13,6 +13,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\TagController;
 
 //authentication
 // Route::get('manage-product','Backend\ProductController@index');
@@ -74,7 +75,8 @@ Route::resource('address','Backend\AddressController');
 Route::resource('code','Frontend\CodeController');
 Route::resource('manage-address','Frontend\AddressController');
 Route::resource('footer-post','Frontend\FooterPostController');
-Route::resource('tag','Frontend\TagController');
+Route::resource('tag', 'Frontend\TagController');
+// Route::get('tag/{slug}', [TagController::class, 'show'])->name('tag.show');
 //quotation 
 Route::resource('yeu-cau-bao-gia','Frontend\QuotationController');
 

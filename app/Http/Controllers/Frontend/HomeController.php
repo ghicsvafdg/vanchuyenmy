@@ -42,8 +42,8 @@ class HomeController extends Controller
         $footerPost = FooterPost::where('status',1)->get();
         
         $hotProducts = DB::table('order_details')
-        ->select('products_id', DB::raw('count(products_id) as count'))
-        ->groupBy('products_id')
+        ->select('product_id', DB::raw('count(product_id) as count'))
+        ->groupBy('product_id')
         ->get();
         
         $i = 1;
@@ -101,8 +101,8 @@ class HomeController extends Controller
         $footerPost = FooterPost::where('status',1)->get();
         
         $hotProducts = DB::table('order_details')
-        ->select('products_id', DB::raw('count(products_id) as count'))
-        ->groupBy('products_id')
+        ->select('product_id', DB::raw('count(product_id) as count'))
+        ->groupBy('product_id')
         ->get();
         
         if(Auth::check()){
@@ -192,8 +192,8 @@ class HomeController extends Controller
         $footerPost = FooterPost::where('status',1)->get();
         
         $hotProducts = DB::table('order_details')
-        ->select('products_id', DB::raw('count(products_id) as count'))
-        ->groupBy('products_id')
+        ->select('product_id', DB::raw('count(product_id) as count'))
+        ->groupBy('product_id')
         ->get();
         
         if(Auth::check()){

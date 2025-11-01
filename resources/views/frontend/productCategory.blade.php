@@ -185,7 +185,7 @@
                                 <div class="row">
                                     <div class="col-4"></div>  
                                     <div class="col-4">
-                                        {{ $product->appends(Illuminate\Support\Facades\Input::except('page')) }}
+                                        {{ $product->appends(request()->except('page')) }}
                                     </div>
                                     <div class="col-4"></div>
                                 </div>
@@ -282,7 +282,7 @@
                                     <div class="col-4"></div>  
                                     <div class="col-4">
                                         {{-- @if(isset($newest)) --}}
-                                        {{ $newest->appends(Illuminate\Support\Facades\Input::except('page')) }}
+                                        {{ $newest->appends(request()->except('page')) }}
                                         {{-- @endif --}}
                                     </div>
                                     <div class="col-4"></div>

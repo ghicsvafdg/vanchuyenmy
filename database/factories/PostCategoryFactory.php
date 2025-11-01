@@ -1,16 +1,23 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
-use App\Models\PostCategory;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(PostCategory::class, function (Faker $faker) {
-    $title=$faker->sentence($nbWords = 3, $variableNbWords = true);
-    return [
-       
-            'title'=>$title,
-            'slug'=>$title,
-            'parent_id'=>$faker->numberBetween($min = 0, $max = 1) // 8567
-    ];
-});
+class PostCategoryFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        $title = $this->faker->sentence(3);
+        return [
+            'title' => $title,
+            'slug' => $title,
+            'parent_id' => $this->faker->numberBetween(0,1)
+        ];
+    }
+}
